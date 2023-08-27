@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj": {}
+    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj": {
+    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj",
+        "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj",
         "projectName": "WebE-Food",
-        "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\obj\\",
+        "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\WebE-Food.csproj",
+        "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\WebE-Food\\WebE-Food\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
