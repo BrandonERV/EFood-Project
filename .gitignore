@@ -92,3 +92,6 @@ $RECYCLE.BIN/
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
+
+**/bin/
+**/obj/
