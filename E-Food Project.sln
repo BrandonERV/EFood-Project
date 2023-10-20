@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Food Project", "E-Food Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFood.DataAccess", "EFood.DataAccess\EFood.DataAccess.csproj", "{9990C935-40BD-41C6-8060-4F7C49050D89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFood.Models", "EFood.Models\EFood.Models.csproj", "{1DC4732E-D086-48FC-BAF4-C9FA31FA632D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFood.Utilities", "EFood.Utilities\EFood.Utilities.csproj", "{624E27CA-61EF-45BC-A368-35AE08FD7947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9990C935-40BD-41C6-8060-4F7C49050D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9990C935-40BD-41C6-8060-4F7C49050D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9990C935-40BD-41C6-8060-4F7C49050D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC4732E-D086-48FC-BAF4-C9FA31FA632D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC4732E-D086-48FC-BAF4-C9FA31FA632D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC4732E-D086-48FC-BAF4-C9FA31FA632D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC4732E-D086-48FC-BAF4-C9FA31FA632D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624E27CA-61EF-45BC-A368-35AE08FD7947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624E27CA-61EF-45BC-A368-35AE08FD7947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624E27CA-61EF-45BC-A368-35AE08FD7947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624E27CA-61EF-45BC-A368-35AE08FD7947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
