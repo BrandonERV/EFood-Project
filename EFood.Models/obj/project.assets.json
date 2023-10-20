@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "EFood.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/EFood.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EFood.Utilities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "EFood.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../EFood.Utilities/EFood.Utilities.csproj",
+      "msbuildProject": "../EFood.Utilities/EFood.Utilities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "EFood.Utilities >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\sjcha\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\E-Food Project\\EFood.Models\\EFood.Models.csproj",
+      "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
       "projectName": "EFood.Models",
-      "projectPath": "C:\\Users\\sjcha\\source\\repos\\E-Food Project\\EFood.Models\\EFood.Models.csproj",
+      "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
       "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sjcha\\source\\repos\\E-Food Project\\EFood.Models\\obj\\",
+      "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

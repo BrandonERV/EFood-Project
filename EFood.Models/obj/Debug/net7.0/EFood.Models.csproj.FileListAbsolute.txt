@@ -1,0 +1,15 @@
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.deps.json
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.dll
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.pdb
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Utilities.dll
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.AssemblyReference.cache
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.AssemblyInfoInputs.cache
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.AssemblyInfo.cs
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.CoreCompileInputs.cache
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.CopyComplete
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.dll
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\refint\EFood.Models.dll
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.pdb
+C:\Users\sjcha\source\repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\ref\EFood.Models.dll
