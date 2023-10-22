@@ -20,7 +20,7 @@ public partial class Logbook
     public string Description { get; set; }
 
     [Required]
-    public int UserId { get; set; }
+    public string UserId { get; set; }
 
     [ForeignKey("UserId")]
     public User User { get; set; }

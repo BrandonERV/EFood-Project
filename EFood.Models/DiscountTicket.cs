@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFood.models;
 
@@ -18,4 +19,10 @@ public partial class DiscountTicket
 
     [Required]
     public int Discount { get; set; }
+
+    [Required]
+    public string UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    public User User { get; set; }
 }

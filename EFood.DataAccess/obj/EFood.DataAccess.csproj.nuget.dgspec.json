@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {}
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
         "projectName": "EFood.DataAccess",
-        "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
-                "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
+              "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+                "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
               },
-              "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-                "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+              "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
               }
             }
           }
@@ -84,17 +84,17 @@
         }
       }
     },
-    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
         "projectName": "EFood.Models",
-        "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
-        "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +108,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-                "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+              "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
               }
             }
           }
@@ -123,6 +123,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -143,17 +149,17 @@
         }
       }
     },
-    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "projectName": "EFood.Utilities",
-        "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
-        "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,6 +184,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

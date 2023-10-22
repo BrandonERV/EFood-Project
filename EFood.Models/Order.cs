@@ -27,4 +27,10 @@ public partial class Order
 
     [ForeignKey("StatusId")]
     public Status Status { get; set; }
+
+    [Required]
+    public string UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    public User User { get; set; }
 }

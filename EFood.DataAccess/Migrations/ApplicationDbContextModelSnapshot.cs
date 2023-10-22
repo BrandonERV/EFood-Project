@@ -67,7 +67,13 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("DiscountTickets");
                 });
@@ -163,8 +169,9 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("registerCode");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("userId");
 
                     b.HasKey("Id");
@@ -199,11 +206,17 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("statusId");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PaymentProcessorId");
 
                     b.HasIndex("StatusId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -427,117 +440,6 @@ namespace EFood.DataAccess.Migrations
                     b.ToTable("Statuses");
                 });
 
-            modelBuilder.Entity("EFood.models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(80)")
-                        .HasColumnName("email");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("name");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(80)")
-                        .HasColumnName("password");
-
-                    b.Property<string>("SecurityAnswer")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(80)")
-                        .HasColumnName("securityAnswer");
-
-                    b.Property<string>("SecurityQuestion")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(80)")
-                        .HasColumnName("securityQuestion");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("status");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("EFood.models.UserDiscountTicket", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("TicketId")
-                        .HasColumnType("int")
-                        .HasColumnName("ticketId");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
-                        .HasColumnName("userId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TicketId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserDiscountTickets");
-                });
-
-            modelBuilder.Entity("EFood.models.UserOrder", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrdersId")
-                        .HasColumnType("int")
-                        .HasColumnName("ordersId");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
-                        .HasColumnName("userId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrdersId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserOrders");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -593,7 +495,8 @@ namespace EFood.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("id");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -602,9 +505,16 @@ namespace EFood.DataAccess.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("email");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -653,6 +563,10 @@ namespace EFood.DataAccess.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -740,6 +654,59 @@ namespace EFood.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EFood.models.User", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("password");
+
+                    b.Property<string>("SecurityAnswer")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("securityAnswer");
+
+                    b.Property<string>("SecurityQuestion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("securityQuestion");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("status");
+
+                    b.HasDiscriminator().HasValue("User");
+                });
+
+            modelBuilder.Entity("EFood.models.DiscountTicket", b =>
+                {
+                    b.HasOne("EFood.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("EFood.models.Logbook", b =>
                 {
                     b.HasOne("EFood.models.User", "User")
@@ -765,9 +732,17 @@ namespace EFood.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("EFood.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("PaymentProcessor");
 
                     b.Navigation("Status");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EFood.models.OrdersProduct", b =>
@@ -855,44 +830,6 @@ namespace EFood.DataAccess.Migrations
                     b.Navigation("Price");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("EFood.models.UserDiscountTicket", b =>
-                {
-                    b.HasOne("EFood.models.DiscountTicket", "Ticket")
-                        .WithMany()
-                        .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("EFood.models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Ticket");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("EFood.models.UserOrder", b =>
-                {
-                    b.HasOne("EFood.models.Order", "Orders")
-                        .WithMany()
-                        .HasForeignKey("OrdersId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("EFood.models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Orders");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

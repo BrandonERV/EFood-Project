@@ -9,3 +9,15 @@ C:\Users\sjcha\source\repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFoo
 C:\Users\sjcha\source\repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\refint\EFood.Utilities.dll
 C:\Users\sjcha\source\repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.pdb
 C:\Users\sjcha\source\repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\ref\EFood.Utilities.dll
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.deps.json
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.dll
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.AssemblyInfoInputs.cache
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.AssemblyInfo.cs
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.dll
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\refint\EFood.Utilities.dll
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\ref\EFood.Utilities.dll
+C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.AssemblyReference.cache
