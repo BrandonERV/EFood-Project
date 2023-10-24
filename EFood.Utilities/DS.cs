@@ -8,5 +8,7 @@ namespace EFood.Utilities
 {
     public static class DS
     {
+        public const string Successful = "Exitosa";
+        public const string Error = "Error";
     }
 }

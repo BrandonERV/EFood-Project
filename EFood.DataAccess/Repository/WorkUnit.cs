@@ -8,17 +8,20 @@ using System.Threading.Tasks;
 
 namespace EFood.DataAccess.Repository
 {
-    public class UnidadTrabajo : IUnidadTrabajo
+    public class WorkUnit : IWorkUnit
     {
 
         private readonly ApplicationDbContext _db;
 
         public IUserRepository User { get; private set; }
 
-        public UnidadTrabajo(ApplicationDbContext db)
+        public ICardRepository Card { get; private set; }
+
+        public WorkUnit(ApplicationDbContext db)
         {
             _db = db;
             User = new UserRepository(_db);
+            Card = new CardRepository(_db);
         }
 
 
@@ -27,7 +30,7 @@ namespace EFood.DataAccess.Repository
             _db.Dispose();
         }
 
-        public async Task Guardar()
+        public async Task Save()
         {
             await _db.SaveChangesAsync();    
         }

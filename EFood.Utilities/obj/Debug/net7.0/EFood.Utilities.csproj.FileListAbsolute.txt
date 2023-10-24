@@ -21,3 +21,4 @@ C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\re
 C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.pdb
 C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\ref\EFood.Utilities.dll
 C:\Users\Brandon\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.AssemblyReference.cache
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.AssemblyReference.cache

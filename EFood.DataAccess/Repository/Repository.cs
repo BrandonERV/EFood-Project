@@ -23,18 +23,18 @@ namespace EFood.DataAccess.Repository
         }
 
 
-        public async Task Agregar(T entidad)
+        public async Task Add(T entidad)
         {
             await dbSet.AddAsync(entidad);
         }
 
-        public async Task<T> Obtener(int id)
+        public async Task<T> get(int id)
         {
             return await dbSet.FindAsync(id);  
         }
 
 
-        public async Task<IEnumerable<T>> ObtenerTodos(Expression<Func<T, bool>> filtro = null,
+        public async Task<IEnumerable<T>> getAll(Expression<Func<T, bool>> filtro = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string incluirPropiedades = null, bool isTracking = true)
         {
             IQueryable<T> query = dbSet;
@@ -61,7 +61,7 @@ namespace EFood.DataAccess.Repository
 
         }
 
-        public async Task<T> ObtenerPrimero(Expression<Func<T, bool>> filtro = null,
+        public async Task<T> getFirst(Expression<Func<T, bool>> filtro = null,
             string incluirPropiedades = null, bool isTracking = true)
         {
 
@@ -87,12 +87,12 @@ namespace EFood.DataAccess.Repository
 
 
 
-        public void Remover(T entidad)
+        public void Remove(T entidad)
         {
             dbSet.Remove(entidad);
         }
 
-        public void RemoverRango(IEnumerable<T> entidad)
+        public void RemoveRange(IEnumerable<T> entidad)
         {
             dbSet.RemoveRange(entidad);
         }

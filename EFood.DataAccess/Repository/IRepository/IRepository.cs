@@ -11,9 +11,9 @@ namespace EFood.DataAccess.Repository.IRepository
     public interface IRepository<T> where T : class
     {
 
-        Task<T> Obtener(int id);
+        Task<T> get(int id);
 
-        Task<IEnumerable<T>> ObtenerTodos(
+        Task<IEnumerable<T>> getAll(
             Expression<Func<T, bool>> filtro = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string incluirPropiedades = null,
@@ -21,17 +21,17 @@ namespace EFood.DataAccess.Repository.IRepository
             );
 
 
-        Task<T> ObtenerPrimero(
+        Task<T> getFirst(
             Expression<Func<T, bool>> filtro = null,
             string incluirPropiedades = null,
             bool isTracking = true
             );
 
-        Task Agregar(T entidad);
+        Task Add(T entidad);
 
-        void Remover(T entidad);
+        void Remove(T entidad);
 
-        void RemoverRango(IEnumerable<T> entidad);
+        void RemoveRange(IEnumerable<T> entidad);
 
     }
 }

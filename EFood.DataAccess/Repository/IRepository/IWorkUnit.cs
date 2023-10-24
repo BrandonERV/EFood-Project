@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EFood.DataAccess.Repository.IRepository
 {
-    public interface IUnidadTrabajo : IDisposable
+    public interface IWorkUnit : IDisposable
     {
         IUserRepository User { get;  }
-
-        Task Guardar();
+        
+        ICardRepository Card { get;  }
+        Task Save();
 
     }
 }
