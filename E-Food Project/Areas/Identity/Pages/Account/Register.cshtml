@@ -1,5 +1,6 @@
 ﻿@page
 @model RegisterModel
+@using EFood.Utilities
 @{
     ViewData["Title"] = "Registro";
 }
@@ -48,6 +49,16 @@
                 <label asp-for="Input.SecurityAnswer">Respuesta de seguridad</label>
                 <span asp-validation-for="Input.SecurityAnswer" class="text-danger"></span>
             </div>
+
+            @if (User.IsInRole(DS.Role_Admin))
+            {
+                <div class="form-floating mb-3">
+                    <lable asp-for="Input.Role">Rol</lable>
+                    <select asp-for="Input.Role" class="form-select" asp-items="@Model.Input.RoleList">
+                        <option value="">--Seleccione el rol</option>
+                    </select>
+                </div>
+            }
 
             
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>

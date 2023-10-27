@@ -10,5 +10,10 @@ namespace EFood.Utilities
     {
         public const string Successful = "Exitosa";
         public const string Error = "Error";
+        public const string Role_Admin = "Administrador";
+        public const string Role_Security = "Seguridad";
+        public const string Role_Maintenance = "Mantenimiento ";
+        public const string Role_Advisory = "Consultas";
+        public const string Role_Client = "Cliente";
     }
 }

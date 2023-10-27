@@ -1,4 +1,5 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+﻿
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
@@ -10,12 +11,15 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using EFood.models;
+using EFood.Utilities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -29,13 +33,15 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +49,7 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -108,12 +115,24 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
             public string SecurityAnswer { get; set; }
 
             public string Role { get; set; }
+
+            public IEnumerable<SelectListItem> RoleList { get; set; }
         }
 
 
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
+
+            Input = new InputModel()
+            {
+                RoleList = _roleManager.Roles.Where(r => r.Name != DS.Role_Client).Select(n => n.Name).Select(l => new SelectListItem
+                {
+                    Text = l,
+                    Value = l
+                })
+            };
+
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
@@ -123,7 +142,16 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+
+                var user = new User
+                {
+                    Name = Input.Name,
+                    Email = Input.Email,
+                    Password = Input.Password,
+                    SecurityAnswer = Input.SecurityAnswer,
+                    SecurityQuestion = Input.SecurityQuestion,
+                    Role = Input.Role
+                };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -132,6 +160,38 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    if (!await _roleManager.RoleExistsAsync(DS.Role_Admin))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(DS.Role_Admin));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(DS.Role_Maintenance))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(DS.Role_Maintenance));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(DS.Role_Security))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(DS.Role_Security));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(DS.Role_Advisory))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(DS.Role_Advisory));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(DS.Role_Client))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(DS.Role_Client));
+                    }
+
+                    if (user.Role == null)
+                    {
+                        await _userManager.AddToRoleAsync(user, DS.Role_Client);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user,user.Role);
+                    }
+
+                    
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -151,8 +211,16 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        if (user.Role == null)
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                            return LocalRedirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "User", new { Area = "Admin" });
+                        }
+                        
                     }
                 }
                 foreach (var error in result.Errors)
