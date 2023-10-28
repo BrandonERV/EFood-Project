@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\E-Food Project"
+    "\\E-Food Project",
+    "\\E-Food Project\\Areas",
+    "\\E-Food Project\\Areas\\Admin",
+    "\\E-Food Project\\Areas\\Admin\\Controllers",
+    "\\E-Food Project\\Areas\\Identity",
+    "\\E-Food Project\\Areas\\Identity\\Pages",
+    "\\E-Food Project\\Areas\\Identity\\Pages\\Account"
   ],
-  "SelectedNode": "\\E-Food Project\\Program.cs",
+  "SelectedNode": "\\E-Food Project\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
   "PreviewInSolutionExplorer": false
 }

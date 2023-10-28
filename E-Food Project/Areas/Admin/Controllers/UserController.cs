@@ -1,6 +1,7 @@
 ﻿using EFood.DataAccess.Data;
 using EFood.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Food_Project.Areas.Admin.Controllers
@@ -26,6 +27,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
 
         #region API
 
+        [HttpGet]
         public async Task<IActionResult> getAll()
         {
             var userList = await _workUnit.User.getAll();
@@ -38,6 +40,29 @@ namespace E_Food_Project.Areas.Admin.Controllers
                 user.Role = roles.FirstOrDefault(u => u.Id == roleId).Name;
             }
             return Json(new { data = userList });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ActiveInactive([FromBody] string id)
+        {
+            var users = await _workUnit.User.getFirst(u => u.Id == id);
+            if (users == null)
+            {
+                return Json(new { success = false, message = "Error de Usuario" });
+
+            }
+            if (users.LockoutEnd != null && users.LockoutEnd > DateTime.Now)
+            {
+                //Usuario Bloqueado
+                users.LockoutEnd = DateTime.Now;
+            }
+            else
+            {
+                users.LockoutEnd = DateTime.Now.AddYears(1000);
+            }
+            await _workUnit.Save();
+            return Json(new { success = true, message = "Operacion Exitosa" });
+
         }
 
         #endregion

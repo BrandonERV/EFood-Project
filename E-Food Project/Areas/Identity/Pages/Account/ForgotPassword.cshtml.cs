@@ -61,7 +61,7 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
                 }
 
                 TempData["Email"] = Input.Email;
-                return RedirectToPage("./ForgotPasswordConfirmation");
+                return RedirectToPage("./ForgotPasswordConfirmation"); 
             }
 
             return Page();

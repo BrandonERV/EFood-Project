@@ -145,6 +145,7 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
 
                 var user = new User
                 {
+                    UserName = Input.Email,
                     Name = Input.Name,
                     Email = Input.Email,
                     Password = Input.Password,

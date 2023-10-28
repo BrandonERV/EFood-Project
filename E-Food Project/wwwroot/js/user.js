@@ -25,37 +25,58 @@ function loadDatatable() {
             "url": "/Admin/User/getAll"
         },
         "columns": [
-            { "data": "name", "width": "20%" },
-            { "data": "roles", "width": "20%" },
+            { "data": "userName" },
+            { "data": "name" },
+            { "data": "role" },
+            {
+                "data": {
+                    id: "id", lockoutEnd: "lockoutEnd"
+                },
+                "render": function (data) {
+                    let today = new Date().getTime();
+                    let block = new Date(data.lockoutEnd).getTime();
+                    if (block > today) {
+                        
+                        return `    
+                        <div class="text-center"> 
+                            <a onclick=ActiveInactive('${data.id}') class="btn btn-danger text-white" style="cursor:pointer", width:150px >
+                                <i class="bi bi-unlock"></i> Activar
+                            </a>
+                        </div>
+                    `;
+                    }
+                    else {
+                        return `
+                        <div class="text-center"> 
+                            <a onclick=ActiveInactive('${data.id}') class="btn btn-success text-white" style="cursor:pointer", width:150px >
+                                <i class="bi bi-lock"></i> Desactivar
+                            </a>
+                        </div>
+                    `;
+                    }
 
+                }
+            }
         ]
-
     });
 }
 
-function Delete(url) {
-    swal({
-        title: "Esta seguro de Eliminar la Tarjeta?",
-        text: "Este proceso es irreversible!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-    }).then((erase) => {
-        if (erase) {
-            $.ajax({
-                type: "POST",
-                url: url,
-                success: function (data) {
-                    if (data.success) {
-                        toastr.success(data.message);
-                        datatable.ajax.reload();
-                    }
-                    else {
-                        toastr.error(data.message);
-                    }
-                }
-            });
+
+
+function ActiveInactive(id) {
+    $.ajax({
+        type: "POST",
+        url: '/Admin/User/ActiveInactive',
+        data: JSON.stringify(id),
+        contentType: "application/json",
+        success: function (data) {
+            if (data.success) {
+                toastr.success(data.message);
+                datatable.ajax.reload();
+            }
+            else {
+                toastr.error(data.sessage);
+            }
         }
     });
-
 }
