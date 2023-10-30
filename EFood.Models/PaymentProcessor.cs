@@ -18,7 +18,26 @@ public partial class PaymentProcessor
     public string Type { get; set; }
 
     [Required(ErrorMessage = "Es requerido")]
-    public string Active { get; set; }
+    public bool Status { get; set; }
 
-    
+    [Required(ErrorMessage = "Es requerido")]
+    public string Processor { get; set; }
+
+    [Required]
+    public bool Verification { get; set; }
+
+    [Required(ErrorMessage = "Es requerido")]
+    public string Method { get; set; }
+
+    [NotMapped]
+    public IEnumerable<string> ProcessorType { get; set; } = new List<string> { "Tarjeta de Crédito o Débito", "Efectivo", "Cheque Electrónico" };
+
+
+
+
+
+
+
+
+
 }

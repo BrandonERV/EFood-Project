@@ -17,11 +17,14 @@ namespace EFood.DataAccess.Repository
 
         public ICardRepository Card { get; private set; }
 
+        public IPaymentProcessorRepository PaymentProcessor { get; private set; }
+
         public WorkUnit(ApplicationDbContext db)
         {
             _db = db;
             User = new UserRepository(_db);
             Card = new CardRepository(_db);
+            PaymentProcessor = new PaymentProcessorRepository(_db);
         }
 
 

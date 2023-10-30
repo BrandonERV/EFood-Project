@@ -3067,19 +3067,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Brandon\\.nuget\\packages\\": {}
+    "C:\\Users\\sjcha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
       "projectName": "EFood.DataAccess",
-      "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3093,11 +3093,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
-              "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
+            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
             },
-            "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-              "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
             }
           }
         }

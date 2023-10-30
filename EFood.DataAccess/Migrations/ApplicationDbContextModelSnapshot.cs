@@ -256,12 +256,11 @@ namespace EFood.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Active")
+                    b.Property<string>("Method")
                         .IsRequired()
-                        .HasMaxLength(30)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("active");
+                        .HasColumnType("varchar(max)")
+                        .HasColumnName("method");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -270,12 +269,29 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
+                    b.Property<string>("Processor")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("processor");
+
+                    b.Property<bool>("Status")
+                        .IsUnicode(false)
+                        .HasColumnType("bit")
+                        .HasColumnName("active");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("type");
+
+                    b.Property<bool>("Verification")
+                        .IsUnicode(false)
+                        .HasColumnType("bit")
+                        .HasColumnName("verification");
 
                     b.HasKey("Id");
 
@@ -597,12 +613,10 @@ namespace EFood.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -639,12 +653,10 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");

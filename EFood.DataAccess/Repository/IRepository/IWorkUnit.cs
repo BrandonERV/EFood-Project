@@ -11,6 +11,9 @@ namespace EFood.DataAccess.Repository.IRepository
         IUserRepository User { get;  }
         
         ICardRepository Card { get;  }
+
+        IPaymentProcessorRepository PaymentProcessor { get;  }
+
         Task Save();
 
     }
