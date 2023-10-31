@@ -18,6 +18,7 @@ namespace EFood.DataAccess.Repository
         public ICardRepository Card { get; private set; }
 
         public IPaymentProcessorRepository PaymentProcessor { get; private set; }
+        public IPriceTypeRepository PriceType { get; private set; }
 
         public WorkUnit(ApplicationDbContext db)
         {
@@ -25,6 +26,7 @@ namespace EFood.DataAccess.Repository
             User = new UserRepository(_db);
             Card = new CardRepository(_db);
             PaymentProcessor = new PaymentProcessorRepository(_db);
+            PriceType = new PriceTypeRepository(_db);
         }
 
 
