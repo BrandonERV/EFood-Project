@@ -17,8 +17,7 @@ public partial class Product
     [Required]
     public string Description { get; set; }
 
-    [Required]
-    public int ImageId { get; set; }
+    public int Image { get; set; }
 
     [Required]
     public int FoodLineId { get; set; }
@@ -26,6 +25,5 @@ public partial class Product
     [ForeignKey("FoodLineId")]
     public FoodLine FoodLine { get; set; }
 
-    [ForeignKey("ImageId")]
-    public Image Image { get; set; }
+  
 }

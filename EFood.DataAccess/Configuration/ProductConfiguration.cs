@@ -21,7 +21,7 @@ namespace EFood.DataAccess.Configuration
                 .IsUnicode(false)
                 .HasColumnName("description").IsRequired();
             builder.Property(e => e.FoodLineId).HasColumnName("foodLineId").IsRequired();
-            builder.Property(e => e.ImageId).HasColumnName("imageId").IsRequired();
+            builder.Property(e => e.Image).IsRequired(false);
             builder.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -31,9 +31,7 @@ namespace EFood.DataAccess.Configuration
                 .HasForeignKey(d => d.FoodLineId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasOne(d => d.Image).WithMany()
-                .HasForeignKey(d => d.ImageId)
-                .OnDelete(DeleteBehavior.NoAction);
+            
         }
     }
 }

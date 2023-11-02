@@ -43,3 +43,18 @@ C:\Users\maria\Source\Repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.M
 C:\Users\maria\Source\Repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\refint\EFood.Models.dll
 C:\Users\maria\Source\Repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.pdb
 C:\Users\maria\Source\Repos\e-food-proyect\EFood.Models\obj\Debug\net7.0\ref\EFood.Models.dll
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.deps.json
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.dll
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Models.pdb
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Utilities.dll
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\bin\Debug\net7.0\EFood.Utilities.pdb
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.AssemblyReference.cache
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.GeneratedMSBuildEditorConfig.editorconfig
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.AssemblyInfoInputs.cache
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.AssemblyInfo.cs
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.CoreCompileInputs.cache
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.csproj.CopyComplete
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.dll
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\refint\EFood.Models.dll
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\EFood.Models.pdb
+B:\Diseño\Proyecto final\e-food-proyect\EFood.Models\obj\Debug\net7.0\ref\EFood.Models.dll

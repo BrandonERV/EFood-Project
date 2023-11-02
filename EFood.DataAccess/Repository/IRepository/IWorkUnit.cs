@@ -16,6 +16,8 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IPriceTypeRepository PriceType { get; }
 
+        IFoodLineRepository FoodLine { get; }
+
 
         Task Save();
 

@@ -19,8 +19,6 @@ namespace EFood.DataAccess.Data
 
         public  DbSet<FoodLine> FoodLines { get; set; }
 
-        public  DbSet<Image> Images { get; set; }
-
         public  DbSet<Logbook> Logbooks { get; set; }
 
         public  DbSet<Order> Orders { get; set; }
