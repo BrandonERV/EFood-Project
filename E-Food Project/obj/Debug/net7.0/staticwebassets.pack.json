@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\js\\priceType.js"
     },
     {
+      "Id": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
       "Id": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

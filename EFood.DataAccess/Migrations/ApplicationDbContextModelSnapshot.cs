@@ -124,27 +124,6 @@ namespace EFood.DataAccess.Migrations
                     b.ToTable("FoodLines");
                 });
 
-            modelBuilder.Entity("EFood.models.Image", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(150)")
-                        .HasColumnName("path");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Images");
-                });
-
             modelBuilder.Entity("EFood.models.Logbook", b =>
                 {
                     b.Property<int>("Id")
@@ -389,9 +368,9 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("foodLineId");
 
-                    b.Property<int>("ImageId")
-                        .HasColumnType("int")
-                        .HasColumnName("imageId");
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -403,8 +382,6 @@ namespace EFood.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FoodLineId");
-
-                    b.HasIndex("ImageId");
 
                     b.ToTable("Products");
                 });
@@ -814,15 +791,7 @@ namespace EFood.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("EFood.models.Image", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.Navigation("FoodLine");
-
-                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("EFood.models.ProductPrice", b =>

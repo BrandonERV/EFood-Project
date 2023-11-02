@@ -17,7 +17,8 @@ public partial class Product
     [Required]
     public string Description { get; set; }
 
-    public int Image { get; set; }
+    [Required]
+    public string Image { get; set; }
 
     [Required]
     public int FoodLineId { get; set; }

@@ -15,5 +15,7 @@ namespace EFood.Utilities
         public const string Role_Maintenance = "Mantenimiento ";
         public const string Role_Advisory = "Consultas";
         public const string Role_Client = "Cliente";
+
+        public const string ImagesPath = @"images\product\";
     }
 }

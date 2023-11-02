@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0x5kmjelZLXwfXoFYhT2a4FdOnCxOXV5wbwFTOSMxbM=",
+  "Hash": "Bmtpk/NEd/R7Dw0FpJPlXZL8jeWBs8zAyg3uHYSf1/0=",
   "Source": "E-Food Project",
   "BasePath": "_content/E-Food Project",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\priceType.js"
+    },
+    {
+      "Identity": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\js\\product.js",
+      "SourceId": "E-Food Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\",
+      "BasePath": "_content/E-Food Project",
+      "RelativePath": "js/product.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\product.js"
     },
     {
       "Identity": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\js\\site.js",
