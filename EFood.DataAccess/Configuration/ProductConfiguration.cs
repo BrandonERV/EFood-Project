@@ -21,7 +21,7 @@ namespace EFood.DataAccess.Configuration
                 .IsUnicode(false)
                 .HasColumnName("description").IsRequired();
             builder.Property(e => e.FoodLineId).HasColumnName("foodLineId").IsRequired();
-            builder.Property(e => e.Image).IsRequired();
+            builder.Property(e => e.Image).IsRequired(false);
             builder.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false)

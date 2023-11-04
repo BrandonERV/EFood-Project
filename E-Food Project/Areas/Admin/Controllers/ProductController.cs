@@ -59,13 +59,13 @@ namespace E_Food_Project.Areas.Admin.Controllers
                 if (productVM.Product.Id == 0)
                 {
                     //Nuevo producto
-                    string fileName = Guid.NewGuid().ToString();
                     string uploads = webRootPath + DS.ImagesPath;
+                    string fileName = Guid.NewGuid().ToString();
                     string extension = Path.GetExtension(files[0].FileName);
 
-                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    using (var fileStream = new FileStream(Path.Combine(uploads,fileName+extension),FileMode.Create))
                     {
-                        files[0].CopyTo(fileStreams);
+                        files[0].CopyTo(fileStream);
                     }
                     productVM.Product.Image = fileName + extension;
                     await _workUnit.Product.Add(productVM.Product);
@@ -76,8 +76,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
                     var Objproduct = await _workUnit.Product.getFirst(p => p.Id == productVM.Product.Id, isTracking: false);
                     if (files.Count > 0)
                     {
-                        string fileName = Guid.NewGuid().ToString();
                         string uploads = webRootPath + DS.ImagesPath;
+                        string fileName = Guid.NewGuid().ToString();
                         string extension = Path.GetExtension(files[0].FileName);
 
                         //borar imagen anterior
@@ -121,20 +121,20 @@ namespace E_Food_Project.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id) { 
 
-            var ProductdDb = await _workUnit.Product.get(id);
-            if (ProductdDb == null)
+            var ProductDb = await _workUnit.Product.get(id);
+            if (ProductDb == null)
             {
                 return Json(new { success = false, message = "Error al borrar el Producto" });
             }
             //Borrar imagen
             string uploads = _webHostEnvironment.WebRootPath + DS.ImagesPath;
-            var previusFile = Path.Combine(uploads, ProductdDb.Image);
+            var previusFile = Path.Combine(uploads, ProductDb.Image);
             if (System.IO.File.Exists(previusFile))
             {
                 System.IO.File.Delete(previusFile);
             }
 
-            _workUnit.Product.Remove(ProductdDb);
+            _workUnit.Product.Remove(ProductDb);
             await _workUnit.Save();
             return Json(new { success = true, message = "Producto borrado correctamente" });
         }

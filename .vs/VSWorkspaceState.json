@@ -1,18 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\E-Food Project",
-    "\\E-Food Project\\Areas",
-    "\\E-Food Project\\Areas\\Admin",
-    "\\E-Food Project\\Areas\\Admin\\Views",
-    "\\E-Food Project\\Views",
-    "\\E-Food Project\\Views\\Shared",
-    "\\EFood.DataAccess",
-    "\\EFood.DataAccess\\Configuration",
-    "\\EFood.DataAccess\\Repository",
-    "\\EFood.DataAccess\\Repository\\IRepository",
-    "\\EFood.Models"
+    ""
   ],
-  "SelectedNode": "\\E-Food Project\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\E-Food Project.sln",
   "PreviewInSolutionExplorer": false
 }

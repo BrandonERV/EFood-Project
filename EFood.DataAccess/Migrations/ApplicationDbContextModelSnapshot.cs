@@ -369,7 +369,6 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnName("foodLineId");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

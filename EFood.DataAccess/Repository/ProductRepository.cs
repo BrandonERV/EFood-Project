@@ -39,7 +39,7 @@ namespace EFood.DataAccess.Repository
 
         public IEnumerable<SelectListItem> GetFoodLineListDropDown(string obj)
         {
-            if (obj == null)
+            if (obj == "FoodLine")
             {
                 return _db.FoodLines.Select(i => new SelectListItem()
                 {

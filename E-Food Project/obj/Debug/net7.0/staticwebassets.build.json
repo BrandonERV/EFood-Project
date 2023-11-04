@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Bmtpk/NEd/R7Dw0FpJPlXZL8jeWBs8zAyg3uHYSf1/0=",
+  "Hash": "u8Q/asvb8P2UpXujiTr72kx9S1dLgZ6Q96fZx4LcuiY=",
   "Source": "E-Food Project",
   "BasePath": "_content/E-Food Project",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\images\\product\\Combo hamburguesa.jpeg",
+      "SourceId": "E-Food Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\",
+      "BasePath": "_content/E-Food Project",
+      "RelativePath": "images/product/Combo hamburguesa.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\Combo hamburguesa.jpeg"
     },
     {
       "Identity": "B:\\Diseño\\Proyecto final\\e-food-proyect\\E-Food Project\\wwwroot\\js\\card.js",

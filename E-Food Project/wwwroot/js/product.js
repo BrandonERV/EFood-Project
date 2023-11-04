@@ -1,4 +1,5 @@
-﻿let datatable;
+﻿
+let datatable;
 
 $(document).ready(function () {
     loadDatatable();
@@ -28,10 +29,10 @@ function loadDatatable() {
             "url": "/Admin/Product/getAll"
         },
         "columns": [
-            { "data": "id"},
-            { "data": "name"},
-            { "data": "description"},
-            { "data": "foodType.name","class": "text-end"},
+            { "data": "id" },
+            { "data": "name" },
+            { "data": "description" },
+            { "data": "foodline.name" },
 
 
             {
@@ -52,9 +53,9 @@ function loadDatatable() {
 
             }
         ]
-        
 
-    
+
+
     });
 }
 
