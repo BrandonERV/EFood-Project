@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {}
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {}
   },
   "projects": {
-    "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
         "projectName": "EFood.Models",
-        "projectPath": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
-        "packagesPath": "C:\\Users\\adr_m\\.nuget\\packages\\",
-        "outputPath": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\adr_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-                "projectPath": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+              "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
               }
             }
           }
@@ -70,25 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "projectName": "EFood.Utilities",
-        "projectPath": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
-        "packagesPath": "C:\\Users\\adr_m\\.nuget\\packages\\",
-        "outputPath": "B:\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\adr_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,7 +87,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -136,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

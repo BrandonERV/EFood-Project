@@ -4,9 +4,13 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using EFood.DataAccess.Repository;
+using EFood.DataAccess.Repository.IRepository;
+using EFood.models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -19,11 +23,13 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
     public class ForgotPasswordModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IWorkUnit _workUnit;
 
 
-        public ForgotPasswordModel(UserManager<IdentityUser> userManager)
+        public ForgotPasswordModel(UserManager<IdentityUser> userManager, IWorkUnit workUnit)
         {
             _userManager = userManager;
+            _workUnit = workUnit;
 
         }
 
@@ -53,14 +59,16 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(Input.Email);
+                var user = await _workUnit.User.getUserName(Input.Email);
+                
                 if (user == null)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
                     return RedirectToPage("./ForgotPassword");
                 }
+                TempData["SecurityQuestion"] = user.SecurityQuestion;
+                TempData["SecurityAnswer"] = user.SecurityAnswer;
+                TempData["UserName"] = Input.Email;
 
-                TempData["Email"] = Input.Email;
                 return RedirectToPage("./ForgotPasswordConfirmation"); 
             }
 

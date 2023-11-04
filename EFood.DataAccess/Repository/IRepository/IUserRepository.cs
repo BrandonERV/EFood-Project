@@ -9,6 +9,6 @@ namespace EFood.DataAccess.Repository.IRepository
 {
     public interface IUserRepository : IRepository<User>
     {
-
+        Task<User> getUserName(String UserName);
     }
 }

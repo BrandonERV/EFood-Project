@@ -1,5 +1,6 @@
 ﻿using EFood.DataAccess.Data;
 using EFood.DataAccess.Repository.IRepository;
+using EFood.models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
         {
             return View();
         }
+
 
         #region API
 

@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using EFood.models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -19,6 +20,8 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
     public class ForgotPasswordConfirmation : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+        
+
 
 
         public ForgotPasswordConfirmation(UserManager<IdentityUser> userManager)
@@ -47,12 +50,31 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
             [Required]
             public string SecurityAnswer { get; set; }
 
-            [Required]
-            public string SecurityQuestion { get; set; }
         }
 
+        public IActionResult OnGet()
+        {
+            var userSecurityQuestion = TempData["SecurityQuestion"] as string;
+            ViewData["SecurityQuestion"] = userSecurityQuestion;
 
+            return Page();
+        }
 
+        public IActionResult OnPost()
+        {
+            var userSecurityAnswer = TempData["SecurityAnswer"] as string;
 
+            if (Input.SecurityAnswer.Equals(userSecurityAnswer))
+            {
+                return RedirectToPage("./ResetPassword"); 
+            }
+            else
+            {
+                ModelState.AddModelError("Input.SecurityAnswer", "La respuesta de seguridad es incorrecta.");
+                var userSecurityQuestion = TempData["SecurityQuestion"] as string;
+                ViewData["SecurityQuestion"] = userSecurityQuestion;
+                return RedirectToPage("./ForgotPasswordConfirmation");
+            }
+        }
     }
 }
