@@ -32,7 +32,7 @@ function loadDatatable() {
             { "data": "id" },
             { "data": "name" },
             { "data": "description" },
-            { "data": "foodline.name" },
+            { "data": "foodLine.name" },
 
 
             {
