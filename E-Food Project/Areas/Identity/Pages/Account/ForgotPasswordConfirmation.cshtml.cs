@@ -20,9 +20,8 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
     public class ForgotPasswordConfirmation : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+        public string userSecurityQuestion;
         
-
-
 
         public ForgotPasswordConfirmation(UserManager<IdentityUser> userManager)
         {
@@ -54,15 +53,16 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
 
         public IActionResult OnGet()
         {
-            var userSecurityQuestion = TempData["SecurityQuestion"] as string;
-            ViewData["SecurityQuestion"] = userSecurityQuestion;
-
+            userSecurityQuestion = TempData["SecurityQuestion"] as string;
+            ViewData["SecurityQuestion"] = TempData["SecurityQuestion"] as string;
+            TempData["SecurityQuestion"] = userSecurityQuestion;
             return Page();
         }
 
         public IActionResult OnPost()
         {
             var userSecurityAnswer = TempData["SecurityAnswer"] as string;
+
 
             if (Input.SecurityAnswer.Equals(userSecurityAnswer))
             {
@@ -71,8 +71,6 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
             else
             {
                 ModelState.AddModelError("Input.SecurityAnswer", "La respuesta de seguridad es incorrecta.");
-                var userSecurityQuestion = TempData["SecurityQuestion"] as string;
-                ViewData["SecurityQuestion"] = userSecurityQuestion;
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
         }

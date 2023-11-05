@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\E-Food Project",
+    "\\E-Food Project\\Areas",
+    "\\E-Food Project\\Areas\\Identity",
+    "\\E-Food Project\\Areas\\Identity\\Pages",
+    "\\E-Food Project\\Areas\\Identity\\Pages\\Account"
   ],
-  "SelectedNode": "\\E-Food Project.sln",
+  "SelectedNode": "\\E-Food Project\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }
