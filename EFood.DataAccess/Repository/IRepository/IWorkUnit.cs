@@ -20,6 +20,9 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IProductRepository Product { get; }
 
+        IProductPriceRepository ProductPrice { get; }
+
+
 
         Task Save();
 

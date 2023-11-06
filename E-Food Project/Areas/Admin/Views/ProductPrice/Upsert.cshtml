@@ -1,0 +1,63 @@
+﻿@model EFood.Models.ViewModels.ProductPriceVM
+@using EFood.Utilities
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear Nuevo precio para el producto";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @if (Model.ProductPrice.Id != 0)
+    {
+        titulo = "Editar precio del producto";
+        <input asp-for="ProductPrice.Id" hidden />
+        <input asp-for="ProductPrice.ProductId" hidden />
+    }
+    <div class="border-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">@titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+
+                    <input asp-for="ProductPrice.ProductId" type="hidden" value="@Model.ProductPrice.ProductId" />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Tipo de precio</label>
+                            <select asp-for="ProductPrice.PriceTypeId" asp-items="@Model.PriceTypeList" class="form-select">
+                                <option disabled selected>-- Seleccione el Tipo de precio --</option>
+                            </select>
+                            <span asp-validation-for="ProductPrice.PriceTypeId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Nombre</label>
+                            <input type="number" asp-for="ProductPrice.Amount" class="form-control" placeholder="Precio"/>
+                        </div>
+                    </div>
+
+
+
+                    <br />
+
+                    <div class="d-grid gap-2 d-md-block">
+                        @if (Model.ProductPrice.Id != 0)
+                        {
+                            <partial name="_ButtonsUpdateBack" model="Model.ProductPrice.Id" />
+                        }
+                        else
+                        {
+                            <partial name="_ButtonsCreateBack" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

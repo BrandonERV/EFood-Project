@@ -15,11 +15,12 @@ namespace EFood.DataAccess.Configuration
         {
 
             builder.Property(e => e.Id).HasColumnName("id").IsRequired();
-            builder.Property(e => e.PriceId).HasColumnName("priceId").IsRequired();
             builder.Property(e => e.ProductId).HasColumnName("productId").IsRequired();
+            builder.Property(e => e.PriceTypeId).HasColumnName("priceTypeId").IsRequired();
+            builder.Property(e => e.Amount).HasColumnName("amount").IsRequired();
 
-            builder.HasOne(d => d.Price).WithMany()
-                .HasForeignKey(d => d.PriceId)
+            builder.HasOne(d => d.PriceType).WithMany()
+                .HasForeignKey(d => d.PriceTypeId)
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(d => d.Product).WithMany()

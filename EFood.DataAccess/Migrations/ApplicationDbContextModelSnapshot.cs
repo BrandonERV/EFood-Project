@@ -303,30 +303,6 @@ namespace EFood.DataAccess.Migrations
                     b.ToTable("PaymentProcessorCards");
                 });
 
-            modelBuilder.Entity("EFood.models.Price", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int")
-                        .HasColumnName("amount");
-
-                    b.Property<int>("PriceTypeId")
-                        .HasColumnType("int")
-                        .HasColumnName("priceTypeId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PriceTypeId");
-
-                    b.ToTable("Prices");
-                });
-
             modelBuilder.Entity("EFood.models.PriceType", b =>
                 {
                     b.Property<int>("Id")
@@ -394,9 +370,13 @@ namespace EFood.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("PriceId")
+                    b.Property<int>("Amount")
                         .HasColumnType("int")
-                        .HasColumnName("priceId");
+                        .HasColumnName("amount");
+
+                    b.Property<int>("PriceTypeId")
+                        .HasColumnType("int")
+                        .HasColumnName("priceTypeId");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int")
@@ -404,7 +384,7 @@ namespace EFood.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PriceId");
+                    b.HasIndex("PriceTypeId");
 
                     b.HasIndex("ProductId");
 
@@ -771,17 +751,6 @@ namespace EFood.DataAccess.Migrations
                     b.Navigation("PaymentProcessor");
                 });
 
-            modelBuilder.Entity("EFood.models.Price", b =>
-                {
-                    b.HasOne("EFood.models.PriceType", "PriceType")
-                        .WithMany()
-                        .HasForeignKey("PriceTypeId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("PriceType");
-                });
-
             modelBuilder.Entity("EFood.models.Product", b =>
                 {
                     b.HasOne("EFood.models.FoodLine", "FoodLine")
@@ -795,9 +764,9 @@ namespace EFood.DataAccess.Migrations
 
             modelBuilder.Entity("EFood.models.ProductPrice", b =>
                 {
-                    b.HasOne("EFood.models.Price", "Price")
+                    b.HasOne("EFood.models.PriceType", "PriceType")
                         .WithMany()
-                        .HasForeignKey("PriceId")
+                        .HasForeignKey("PriceTypeId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -807,7 +776,7 @@ namespace EFood.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Price");
+                    b.Navigation("PriceType");
 
                     b.Navigation("Product");
                 });
