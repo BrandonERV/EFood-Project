@@ -1,0 +1,46 @@
+﻿@model EFood.Models.ViewModels.PaymentProcessorCardVM
+@using EFood.Utilities
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Agregar Tarjeta";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="border-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">@titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Tarjetas</label>
+                            <select asp-for="PaymentProcessorCard.CardId" asp-items="@Model.CardList" class="form-select">
+                                <option disabled selected>-- Seleccione Tarjeta --</option>
+                            </select>
+                            <span asp-validation-for="PaymentProcessorCard.CardId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="d-grid gap-2 d-md-block">
+                        @if (Model.PaymentProcessorCard.Id != 0)
+                        {
+                            <partial name="_ButtonsUpdateBack" model="Model.PaymentProcessorCard.Id" />
+                        }
+                        else
+                        {
+                            <partial name="_ButtonsCreateBack" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

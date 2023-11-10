@@ -39,6 +39,9 @@ function loadDatatable() {
                 "render": function (data) {
                     return `
                         <div class="text-center">
+                            <a href="/Admin/PaymentProcessorCard/index/${data}" class="btn btn-primary text-white" style="cursor:pointer">
+                                <i class="bi bi-credit-card-fill"></i>
+                            </a>
                             <a href="/Admin/PaymentProcessor/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                 <i class="bi bi-pencil-square"></i>
                             </a>

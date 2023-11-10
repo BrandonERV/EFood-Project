@@ -22,6 +22,8 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IProductPriceRepository ProductPrice { get; }
 
+        IPaymentProcessorCardRepository PaymentProcessorCard { get; }
+
 
 
         Task Save();
