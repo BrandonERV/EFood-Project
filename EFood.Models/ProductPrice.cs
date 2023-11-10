@@ -10,7 +10,6 @@ public partial class ProductPrice
     public int Id { get; set; }
 
     [Required]
-
     public int ProductId { get; set; }
 
     [ForeignKey("ProductId")]

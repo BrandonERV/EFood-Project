@@ -6,10 +6,10 @@
 
 <div class="row">
     <div class="col-lg-6">
-        <h2 class="text-primary">Lista de Precios del producto</h2>
+        <h2 class="text-primary">Lista de Precios del producto: @ViewData["ProductName"]</h2>
     </div>
     <div class="col-lg-6">
-        <a class="btn btn-outline-primary" asp-action="Upsert" ><i class="bi bi-plus-square-fill"></i> Crear Nuevo precio del producto</a>
+        <a class="btn btn-outline-primary" asp-action="Upsert" asp-route-idProducto=@ViewData["ProductId"]><i class="bi bi-plus-square-fill"></i> Crear Nuevo precio del producto</a>
     </div>
 </div>
 

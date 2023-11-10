@@ -21,16 +21,33 @@ namespace E_Food_Project.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            return View();
+            ProductVM productVM = new ProductVM()
+            {
+                Product = await _workUnit.Product.get(id.GetValueOrDefault()),
+                FoodLineList = _workUnit.Product.GetFoodLineListDropDown("FoodLine")
+
+            };
+
+            ViewData["ProductName"] = productVM.Product.Name;
+            ViewData["ProductId"] = productVM.Product.Id;
+
+            return View(productVM);
         }
 
-        public async Task<IActionResult> Upsert(int? id) 
+        public async Task<IActionResult> Upsert(int? id, int idProducto) 
         {
+
             ProductPriceVM productPriceVM = new ProductPriceVM()
             {
-                ProductPrice = new ProductPrice(),
+                
+                ProductPrice = new ProductPrice
+                {
+                    ProductId = idProducto,
+                    Product = await _workUnit.Product.get(idProducto)
+                    
+                },
                 PriceTypeList = _workUnit.ProductPrice.GetPriceTypesListDropDown("PriceType")
 
             };

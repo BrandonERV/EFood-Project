@@ -23,8 +23,8 @@ namespace EFood.DataAccess.Configuration
                 .HasForeignKey(d => d.PriceTypeId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasOne(d => d.Product).WithMany()
-                .HasForeignKey(d => d.ProductId)
+            builder.HasOne(a => a.Product).WithMany()
+                .HasForeignKey(a => a.ProductId)
                 .OnDelete(DeleteBehavior.NoAction);
         }
     }
