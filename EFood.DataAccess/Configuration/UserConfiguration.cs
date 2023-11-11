@@ -42,11 +42,6 @@ namespace EFood.DataAccess.Configuration
                 .IsUnicode(false)
                 .HasColumnName("securityQuestion").IsRequired();
 
-            builder.Property(e => e.Status)
-                .HasMaxLength(30)
-                .IsUnicode(false)
-                .HasColumnName("status").IsRequired();
-
         }
     }
 }

@@ -20,9 +20,4 @@ public partial class DiscountTicket
     [Required]
     public int Discount { get; set; }
 
-    [Required]
-    public string UserId { get; set; }
-
-    [ForeignKey("UserId")]
-    public User User { get; set; }
 }

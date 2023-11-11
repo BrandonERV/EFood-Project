@@ -28,9 +28,6 @@ namespace EFood.models
         [MaxLength(80, ErrorMessage = "Respuesta de seguridad debe ser Maximo 80 Caracteres")]
         public string SecurityAnswer { get; set; }
 
-        [Required(ErrorMessage = "Estado es Requerido")]
-        public string Status { get; set; }
-
         [NotMapped]
         public String Role { get; set; }
 

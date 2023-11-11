@@ -29,6 +29,8 @@ namespace EFood.DataAccess.Repository
 
         public IPaymentProcessorCardRepository PaymentProcessorCard { get; private set; }
 
+        public IDiscountTicketRepository DiscountTicket { get; private set; }
+
 
         public WorkUnit(ApplicationDbContext db)
         {
@@ -41,6 +43,7 @@ namespace EFood.DataAccess.Repository
             Product = new ProductRepository(_db);
             ProductPrice = new ProductPriceRepository(_db);
             PaymentProcessorCard = new PaymentProcessorCardRepository(_db);
+            DiscountTicket = new DiscountTicketRepository(_db);
 
         }
 

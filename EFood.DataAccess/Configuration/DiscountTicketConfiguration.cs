@@ -11,7 +11,7 @@ namespace EFood.DataAccess.Configuration
 {
     public class DiscountTicketConfiguration : IEntityTypeConfiguration<DiscountTicket>
     {
-        public void Configure(EntityTypeBuilder<DiscountTicket> builder) 
+        public void Configure(EntityTypeBuilder<DiscountTicket> builder)
         {
             builder.Property(e => e.Id).HasColumnName("id").IsRequired();
             builder.Property(e => e.Availabletickets).HasColumnName("availabletickets").IsRequired();
@@ -20,7 +20,6 @@ namespace EFood.DataAccess.Configuration
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name").IsRequired();
-
         }
 
     }

@@ -67,13 +67,7 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("DiscountTickets");
                 });
@@ -412,6 +406,33 @@ namespace EFood.DataAccess.Migrations
                     b.ToTable("Statuses");
                 });
 
+            modelBuilder.Entity("EFood.models.UserDiscountTicket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int")
+                        .HasColumnName("ticketId");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("userId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserDiscountTickets");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -654,25 +675,7 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("varchar(80)")
                         .HasColumnName("securityQuestion");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("status");
-
                     b.HasDiscriminator().HasValue("User");
-                });
-
-            modelBuilder.Entity("EFood.models.DiscountTicket", b =>
-                {
-                    b.HasOne("EFood.models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EFood.models.Logbook", b =>
@@ -779,6 +782,25 @@ namespace EFood.DataAccess.Migrations
                     b.Navigation("PriceType");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("EFood.models.UserDiscountTicket", b =>
+                {
+                    b.HasOne("EFood.models.DiscountTicket", "Ticket")
+                        .WithMany()
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("EFood.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
