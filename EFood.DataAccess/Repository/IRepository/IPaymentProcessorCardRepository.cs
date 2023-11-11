@@ -13,5 +13,8 @@ namespace EFood.DataAccess.Repository.IRepository
         void Update(PaymentProcessorCard paymentProcessorCard);
 
         IEnumerable<SelectListItem> GetCardList(string obj);
+
+        IEnumerable<SelectListItem> GetPaymentProcessorList(string obj);
+
     }
 }

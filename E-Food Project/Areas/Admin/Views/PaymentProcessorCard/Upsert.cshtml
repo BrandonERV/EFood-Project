@@ -3,6 +3,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     var titulo = "Agregar Tarjeta";
+    
 }
 
 <form method="post" enctype="multipart/form-data">
@@ -15,8 +16,6 @@
         <div class="row">
             <div class="col-8">
                 <div class="container">
-
-
                     <div class="row">
                         <div class="col-md-6">
                             <label>Tarjetas</label>
@@ -24,6 +23,19 @@
                                 <option disabled selected>-- Seleccione Tarjeta --</option>
                             </select>
                             <span asp-validation-for="PaymentProcessorCard.CardId" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6" hidden>
+                            <label>Procesadores de pago</label>
+                            <select asp-for="PaymentProcessorCard.PaymentProcessorId" class="form-select">
+                                <option disabled>-- Seleccione procesador --</option>
+                                @foreach (var processor in Model.PaymentProcessorList.Where(p => p.Value.Equals(ViewData["PaymentProcessorId"].ToString())))
+                                {
+                                    <option value="@processor.Value" selected>
+                                        @processor.Text
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="PaymentProcessorCard.PaymentProcessorId" class="text-danger"></span>
                         </div>
                     </div>
                     <br />

@@ -33,7 +33,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
 
         public async Task<IActionResult> Upsert(int? id, int idPaymentProcessor) 
         {
-
+            
+            ViewData["PaymentProcessorId"] = idPaymentProcessor;
             PaymentProcessorCardVM paymentProcessorCardVM = new PaymentProcessorCardVM()
             {
                 
@@ -43,7 +44,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
                     PaymentProcessor = await _workUnit.PaymentProcessor.get(idPaymentProcessor)
                     
                 },
-                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card"),
+                PaymentProcessorList = _workUnit.PaymentProcessorCard.GetPaymentProcessorList("PaymentProcessor")
 
             };
            if (id == null)
@@ -64,11 +66,13 @@ namespace E_Food_Project.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Upsert(PaymentProcessorCardVM paymentProcessorCardVM)
         {
+            
             if (ModelState.IsValid)
             {
                 
                 if (paymentProcessorCardVM.PaymentProcessorCard.Id == 0)
                 {
+
                     await _workUnit.PaymentProcessorCard.Add(paymentProcessorCardVM.PaymentProcessorCard);
                 }
                 TempData[DS.Successful] = "Tarjeta del procesador de pago guardada correctamente";
@@ -77,6 +81,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
             }
             //si el modelo no es valido
             paymentProcessorCardVM.CardList = _workUnit.PaymentProcessorCard.GetCardList("Card");
+            paymentProcessorCardVM.PaymentProcessorList = _workUnit.PaymentProcessorCard.GetPaymentProcessorList("PaymentProcessor");
             return View(paymentProcessorCardVM);
         }
 
@@ -86,7 +91,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> getAll()
         { 
-            var all = await _workUnit.PaymentProcessorCard.getAll(incluirPropiedades:"Card");
+            var all = await _workUnit.PaymentProcessorCard.getAll(incluirPropiedades:"Card,PaymentProcessor");
             return Json(new { data = all });
         }
 

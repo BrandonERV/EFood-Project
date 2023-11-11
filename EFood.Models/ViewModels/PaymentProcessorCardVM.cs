@@ -13,5 +13,7 @@ namespace EFood.Models.ViewModels
         public PaymentProcessorCard PaymentProcessorCard { get; set; }
 
         public IEnumerable<SelectListItem> CardList{ get; set; }
+
+        public IEnumerable<SelectListItem> PaymentProcessorList { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lPbcUtJmroewgZfrdoVlRqe/YTCJDOLXlRj6wxbfikE=",
+  "Hash": "xNotUbrSeqBVMK4ABt5FMJsZEovThkS5eo7foQqeN9M=",
   "Source": "E-Food Project",
   "BasePath": "_content/E-Food Project",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\wwwroot\\images\\product\\625dec5c-27b2-4e77-b245-1083d4ed4925.jpeg",
+      "SourceId": "E-Food Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\wwwroot\\",
+      "BasePath": "_content/E-Food Project",
+      "RelativePath": "images/product/625dec5c-27b2-4e77-b245-1083d4ed4925.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\625dec5c-27b2-4e77-b245-1083d4ed4925.jpeg"
     },
     {
       "Identity": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\wwwroot\\images\\product\\7155e634-17d6-45c6-8765-777a62af1488.jpeg",

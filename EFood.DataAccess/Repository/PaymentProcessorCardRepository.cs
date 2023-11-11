@@ -48,5 +48,21 @@ namespace EFood.DataAccess.Repository
                 return null;
             }
         }
+
+        public IEnumerable<SelectListItem> GetPaymentProcessorList(string obj)
+        {
+            if (obj == "PaymentProcessor")
+            {
+                return _db.PaymentProcessors.Select(i => new SelectListItem()
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                });
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
