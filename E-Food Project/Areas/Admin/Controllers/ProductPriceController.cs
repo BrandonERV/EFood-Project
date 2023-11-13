@@ -38,7 +38,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
 
         public async Task<IActionResult> Upsert(int? id, int idProducto) 
         {
-
+            ViewData["ProductId"] = idProducto;
             ProductPriceVM productPriceVM = new ProductPriceVM()
             {
                 
@@ -48,7 +48,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
                     Product = await _workUnit.Product.get(idProducto)
                     
                 },
-                PriceTypeList = _workUnit.ProductPrice.GetPriceTypesListDropDown("PriceType")
+                PriceTypeList = _workUnit.ProductPrice.GetPriceTypesListDropDown("PriceType"),
+                ProductList = _workUnit.ProductPrice.GetProductsListDropDown("Product")
 
             };
            if (id == null)
@@ -87,10 +88,11 @@ namespace E_Food_Project.Areas.Admin.Controllers
                 }
                 TempData[DS.Successful] = "Precio del producto guardado correctamente";
                 await _workUnit.Save();
-                return View("Index");
+                return RedirectToAction("Index", new { id = productPriceVM.ProductPrice.ProductId });
             }
             //si el modelo no es valido
             productPriceVM.PriceTypeList = _workUnit.ProductPrice.GetPriceTypesListDropDown("PriceType");
+            productPriceVM.ProductList = _workUnit.ProductPrice.GetProductsListDropDown("Product");
             return View(productPriceVM);
         }
 
@@ -100,7 +102,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> getAll()
         { 
-            var all = await _workUnit.ProductPrice.getAll(incluirPropiedades:"PriceType");
+            var all = await _workUnit.ProductPrice.getAll(incluirPropiedades:"PriceType,Product");
             return Json(new { data = all });
         }
 

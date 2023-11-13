@@ -77,7 +77,7 @@ namespace E_Food_Project.Areas.Admin.Controllers
                 }
                 TempData[DS.Successful] = "Tarjeta del procesador de pago guardada correctamente";
                 await _workUnit.Save();
-                return View("Index");
+                return RedirectToAction("Index", new { id = paymentProcessorCardVM.PaymentProcessorCard.PaymentProcessorId });
             }
             //si el modelo no es valido
             paymentProcessorCardVM.CardList = _workUnit.PaymentProcessorCard.GetCardList("Card");

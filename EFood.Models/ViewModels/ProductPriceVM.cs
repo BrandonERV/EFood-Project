@@ -14,5 +14,8 @@ namespace EFood.Models.ViewModels
 
         public IEnumerable<SelectListItem> PriceTypeList { get; set; }
 
+        public IEnumerable<SelectListItem> ProductList { get; set; }
+
+
     }
 }

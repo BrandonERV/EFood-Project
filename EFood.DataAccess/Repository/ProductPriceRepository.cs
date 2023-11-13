@@ -49,5 +49,21 @@ namespace EFood.DataAccess.Repository
                 return null;
             }
         }
+
+        public IEnumerable<SelectListItem> GetProductsListDropDown(string obj)
+        {
+            if (obj == "Product")
+            {
+                return _db.Products.Select(i => new SelectListItem()
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                });
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

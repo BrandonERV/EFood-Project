@@ -40,7 +40,18 @@
                         </div>
                     </div>
 
-
+                    <div class="col-md-6" hidden>
+                        <select asp-for="ProductPrice.ProductId" class="form-select">
+                            <option disabled>-- Seleccione procesador --</option>
+                            @foreach (var processor in Model.ProductList.Where(p => p.Value.Equals(ViewData["ProductId"].ToString())))
+                            {
+                                <option value="@processor.Value" selected>
+                                    @processor.Text
+                                </option>
+                            }
+                        </select>
+                        <span asp-validation-for="ProductPrice.ProductId" class="text-danger"></span>
+                    </div>
 
                     <br />
 

@@ -13,5 +13,8 @@ namespace EFood.DataAccess.Repository.IRepository
         void Update(ProductPrice productPrice);
 
         IEnumerable<SelectListItem> GetPriceTypesListDropDown(string obj);
+
+        IEnumerable<SelectListItem> GetProductsListDropDown(string obj);
+
     }
 }
