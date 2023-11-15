@@ -24,6 +24,7 @@ function loadDatatable() {
         "ajax": {
             "url": "/Admin/PaymentProcessor/getAll"
         },
+
         "columns": [
             { "data": "id" },
             { "data": "processor" },

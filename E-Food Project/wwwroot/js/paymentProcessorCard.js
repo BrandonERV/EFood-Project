@@ -28,8 +28,10 @@ function loadDatatable() {
         "ajax": {
             "url": "/Admin/PaymentProcessorCard/getAll"
         },
+
         "columns": [
             { "data": "id" },
+            { "data": "paymentProcessor.name"},
             { "data": "card.name" },
             
             {
@@ -37,9 +39,6 @@ function loadDatatable() {
                 "render": function (data) {
                     return `
                         <div class="text-center">
-                            <a href="/Admin/PaymentProcessorCard/Upsert?id=${data}&idPaymentProcessor=${ViewData["PaymentProcessorId"]}" class="btn btn-success text-white" style="cursor:pointer">
-                                <i class="bi bi-pencil-square"></i>
-                            </a>
                             <a onclick=Delete("/Admin/PaymentProcessorCard/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
                                 <i class="bi bi-trash3-fill"></i>
                             </a>

@@ -32,16 +32,12 @@ function loadDatatable() {
             { "data": "id" },
             { "data": "priceType.name" },
             { "data": "amount" },
-            { "data": "productId.name" },
-            
-
-
             {
                 "data": "id",
                 "render": function (data) {
                     return `
                         <div class="text-center">
-                            <a href="/Admin/ProductPrice/Upsert?id=${data}&idProducto=${ViewData["ProductId"]}" class="btn btn-success text-white" style="cursor:pointer">
+                            <a href="/Admin/ProductPrice/Upsert?id=${data}" class="btn btn-success text-white" style="cursor:pointer">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             <a onclick=Delete("/Admin/ProductPrice/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
