@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFood.Models.Specifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -20,6 +21,13 @@ namespace EFood.DataAccess.Repository.IRepository
             bool isTracking = true
             );
 
+        PagedList<T> getAllPaginated(
+            Parameters parameters,
+            Expression<Func<T, bool>> filtro = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            string incluirPropiedades = null,
+            bool isTracking = true
+            );
 
         Task<T> getFirst(
             Expression<Func<T, bool>> filtro = null,

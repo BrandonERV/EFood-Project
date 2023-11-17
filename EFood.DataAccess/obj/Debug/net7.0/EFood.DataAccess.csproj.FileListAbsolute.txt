@@ -66,3 +66,20 @@ B:\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood
 B:\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\refint\EFood.DataAccess.dll
 B:\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.pdb
 B:\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\ref\EFood.DataAccess.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.DataAccess.deps.json
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.DataAccess.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.DataAccess.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.Models.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.Utilities.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.Models.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\bin\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.AssemblyInfo.cs
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.csproj.CopyComplete
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\refint\EFood.DataAccess.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\EFood.DataAccess.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.DataAccess\obj\Debug\net7.0\ref\EFood.DataAccess.dll

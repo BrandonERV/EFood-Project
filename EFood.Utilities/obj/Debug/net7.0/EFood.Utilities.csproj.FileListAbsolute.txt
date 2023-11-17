@@ -46,3 +46,15 @@ B:\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.
 B:\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\refint\EFood.Utilities.dll
 B:\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.pdb
 B:\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\ref\EFood.Utilities.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.deps.json
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.AssemblyReference.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.AssemblyInfoInputs.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.AssemblyInfo.cs
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\refint\EFood.Utilities.dll
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\EFood.Utilities.pdb
+C:\Users\Acer Swift 3\Documents\Universidad\Diseño\Proyecto final\e-food-proyect\EFood.Utilities\obj\Debug\net7.0\ref\EFood.Utilities.dll

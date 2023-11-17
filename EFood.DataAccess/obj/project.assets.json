@@ -3067,19 +3067,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sjcha\\.nuget\\packages\\": {}
+    "C:\\Users\\Acer Swift 3\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
       "projectName": "EFood.DataAccess",
-      "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Acer Swift 3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Acer Swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3093,11 +3093,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
+            "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+              "projectPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
             },
-            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+            "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+              "projectPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
             }
           }
         }
@@ -3145,7 +3145,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
