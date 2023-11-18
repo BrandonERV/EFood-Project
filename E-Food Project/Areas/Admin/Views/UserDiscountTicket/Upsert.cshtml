@@ -1,0 +1,58 @@
+﻿@model EFood.Models.ViewModels.UserDiscountTicketVM
+@using EFood.Utilities
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Agregar Usuario";
+
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="border-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">@titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Usuarios</label>
+                            <select asp-for="UserDiscountTicket.UserId" asp-items="@Model.UserList" class="form-select">
+                                <option disabled selected>-- Seleccione Usuario --</option>
+                            </select>
+                            <span asp-validation-for="UserDiscountTicket.UserId" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6" hidden>
+                            <label>Tiquetes de Descuento</label>
+                            <select asp-for="UserDiscountTicket.TicketId" class="form-select">
+                                <option disabled>-- Seleccione Tiquete --</option>
+                                @foreach (var processor in Model.DiscountTicketList.Where(p => p.Value.Equals(ViewData["DiscountTicketId"].ToString())))
+                                {
+                                    <option value="@processor.Value" selected>
+                                        @processor.Text
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="UserDiscountTicket.TicketId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="d-grid gap-2 d-md-block">
+                        @if (Model.UserDiscountTicket.Id != 0)
+                        {
+                            <partial name="_ButtonsUpdateBack" model="Model.UserDiscountTicket.Id" />
+                        }
+                        else
+                        {
+                            <partial name="_ButtonsCreateBack" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {}
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+    "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "projectName": "EFood.Utilities",
-        "projectPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
-        "packagesPath": "C:\\Users\\Acer Swift 3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer Swift 3\\Documents\\Universidad\\Diseño\\Proyecto final\\e-food-proyect\\EFood.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "packagesPath": "C:\\Users\\Brandon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Brandon\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Acer Swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Brandon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

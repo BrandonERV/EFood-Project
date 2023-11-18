@@ -26,6 +26,8 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IDiscountTicketRepository DiscountTicket { get;  }
 
+        IUserDiscountTicketRepository UserDiscountTicket { get; }
+
 
 
         Task Save();

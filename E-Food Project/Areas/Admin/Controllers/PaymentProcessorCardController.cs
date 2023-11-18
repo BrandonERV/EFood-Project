@@ -109,10 +109,6 @@ namespace E_Food_Project.Areas.Admin.Controllers
             return Json(new { success = true, message = "Tarjeta del procesador de pago borrada correctamente" });
         }
 
-       
-
-
-
         #endregion
 
 

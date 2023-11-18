@@ -7,12 +7,16 @@ public partial class UserDiscountTicket
 {
     [Key]
     public int Id { get; set; }
+
     [Required]
     public string UserId { get; set; }
+
     [Required]
     public int TicketId { get; set; }
+
     [ForeignKey("TicketId")]
     public DiscountTicket Ticket { get; set; }
+
     [ForeignKey("UserId")]
     public User User { get; set; }
 }

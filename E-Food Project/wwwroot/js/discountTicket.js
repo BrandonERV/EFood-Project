@@ -34,6 +34,9 @@ function loadDatatable() {
                 "render": function (data) {
                     return `
                         <div class="text-center">
+                            <a href="/Admin/UserDiscountTicket/index/${data}" class="btn btn-primary text-white" style="cursor:pointer">
+                                <i class="bi bi-person-fill-add"></i>
+                            </a>
                             <a href="/Admin/DiscountTicket/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
