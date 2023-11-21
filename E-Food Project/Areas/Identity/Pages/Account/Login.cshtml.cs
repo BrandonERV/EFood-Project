@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using EFood.DataAccess.Repository.IRepository;
+using EFood.Utilities;
 
 namespace E_Food_Project.Areas.Identity.Pages.Account
 {
@@ -21,11 +23,13 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly IWorkUnit _workUnit;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, IWorkUnit workUnit)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _workUnit = workUnit;
         }
 
         /// <summary>
@@ -114,6 +118,10 @@ namespace E_Food_Project.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    var user = await _workUnit.User.getFirst(u => u.UserName == Input.Email);
+                    var carList = await _workUnit.ShoppingCart.getAll(c=> c.UserId == user.Id);
+                    var productAmount = carList.Count();
+                    HttpContext.Session.SetInt32(DS.ssShoppingCart, productAmount);
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }

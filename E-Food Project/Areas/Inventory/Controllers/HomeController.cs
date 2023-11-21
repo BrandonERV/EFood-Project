@@ -1,10 +1,13 @@
 ﻿using EFood.DataAccess.Repository.IRepository;
-using EFood.models;
+using EFood.Models;
 using EFood.Models.Specifications;
 using EFood.Models.ViewModels;
+using EFood.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Reflection.Metadata;
+using System.Security.Claims;
 
 namespace E_Food_Project.Areas.Inventory.Controllers
 {
@@ -14,6 +17,9 @@ namespace E_Food_Project.Areas.Inventory.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IWorkUnit _workUnit;
 
+        [BindProperty]
+        public ShoppingCartVM shoppingCartVM { get; set; }
+
         public HomeController(ILogger<HomeController> logger, IWorkUnit workUnit)
         {
             _logger = logger;
@@ -21,8 +27,17 @@ namespace E_Food_Project.Areas.Inventory.Controllers
         }
 
 
-        public IActionResult Index(int pageNumber =1, string search ="", string currentSearch ="")
+        public async Task<IActionResult> Index(int pageNumber =1, string search ="", string currentSearch ="")
         {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            if (claim != null) 
+            {
+                var cartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value);
+                var amountProducts = cartList.Count();
+                HttpContext.Session.SetInt32(DS.ssShoppingCart, amountProducts);
+            }
+
             if (!string.IsNullOrEmpty(search))
             {
                 pageNumber = 1;
@@ -58,6 +73,53 @@ namespace E_Food_Project.Areas.Inventory.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> Detail(int id)
+        {
+            shoppingCartVM = new ShoppingCartVM();
+            shoppingCartVM.Product = await _workUnit.Product.getFirst(p => p.Id == id, incluirPropiedades:"FoodLine");
+            shoppingCartVM.ProductPrices = _workUnit.ProductPrice.GetProductPricesListByIdDropDown("ProductPrices", id);
+            shoppingCartVM.ShoppingCart = new ShoppingCart()
+            {
+                Product = shoppingCartVM.Product,
+                ProductId = shoppingCartVM.Product.Id
+            };
+
+            return View(shoppingCartVM);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> Detail(ShoppingCartVM shoppingCartVM)
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            shoppingCartVM.ShoppingCart.UserId = claim.Value;
+
+            ShoppingCart cartBD = await _workUnit.ShoppingCart.getFirst(c => c.UserId == claim.Value && 
+                                                                        c.ProductId == shoppingCartVM.ShoppingCart.ProductId);
+
+            if(cartBD == null) 
+            {
+                await _workUnit.ShoppingCart.Add(shoppingCartVM.ShoppingCart);
+            }
+            else
+            {
+                cartBD.Amount += shoppingCartVM.ShoppingCart.Amount;
+                _workUnit.ShoppingCart.Update(cartBD);
+            }
+
+            await _workUnit.Save();
+            TempData[DS.Successful] = "Producto agregado al Carro de Compras";
+
+            var cartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value);
+            var amountProducts = cartList.Count();
+            HttpContext.Session.SetInt32(DS.ssShoppingCart, amountProducts);
+
+            return RedirectToAction("Index");
+        }
+ 
         public IActionResult Privacy()
         {
             return View();

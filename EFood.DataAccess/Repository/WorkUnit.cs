@@ -1,5 +1,6 @@
 ﻿using EFood.DataAccess.Data;
 using EFood.DataAccess.Repository.IRepository;
+using EFood.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,15 @@ namespace EFood.DataAccess.Repository
 
         public IUserDiscountTicketRepository UserDiscountTicket { get; private set; }
 
+        public IShoppingCartRepository ShoppingCart { get; private set; }
+
+        public IOrderRepository Order { get; private set; }
+
+        public IOrdersProductRepository OrderProduct { get; private set; }
+
+
+
+
 
         public WorkUnit(ApplicationDbContext db)
         {
@@ -47,6 +57,12 @@ namespace EFood.DataAccess.Repository
             PaymentProcessorCard = new PaymentProcessorCardRepository(_db);
             DiscountTicket = new DiscountTicketRepository(_db);
             UserDiscountTicket = new UserDiscountTicketRepository(_db);
+            ShoppingCart = new ShoppingCartRepository(_db);
+            Order = new OrderRepository(_db);
+            OrderProduct = new OrdersProductRepository(_db);
+
+
+
 
         }
 

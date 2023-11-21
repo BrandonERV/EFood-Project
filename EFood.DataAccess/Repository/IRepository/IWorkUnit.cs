@@ -28,6 +28,15 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IUserDiscountTicketRepository UserDiscountTicket { get; }
 
+        IShoppingCartRepository ShoppingCart { get; }
+
+        IOrderRepository Order { get; }
+
+        IOrdersProductRepository OrderProduct { get; }
+
+
+
+
 
 
         Task Save();

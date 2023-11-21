@@ -16,5 +16,9 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IEnumerable<SelectListItem> GetProductsListDropDown(string obj);
 
+        IEnumerable<SelectListItem> GetProductPricesListByIdDropDown(string obj, int productId);
+
+
+
     }
 }

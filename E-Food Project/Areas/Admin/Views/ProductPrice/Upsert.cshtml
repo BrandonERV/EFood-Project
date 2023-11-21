@@ -71,3 +71,33 @@
     </div>
 </form>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+
+        document.getElementById("ProductPrice.PriceTypeId").addEventListener('change', function () {
+            validateName();
+
+        });
+
+        function validateName() {
+            var url = '@Url.Content("~/")' + "Admin/ProductoPrice/ValidatePriceType";
+            var id = '#id';
+            
+
+            $.getJSON(url, { id: $(id).val()}, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var name = document.getElementById("ProductPrice.PriceTypeId");
+                        swal("Error", "Tipo de precio ya existe", "error");
+                        name.value = "";
+                    }
+                });
+            })
+
+        }
+
+    </script>
+}
+

@@ -1,4 +1,5 @@
 ﻿using EFood.models;
+using EFood.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -38,6 +39,9 @@ namespace EFood.DataAccess.Data
         public  DbSet<Status> Statuses { get; set; }
 
         public  DbSet<User> Users { get; set; }
+
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
 
         public DbSet<UserDiscountTicket> UserDiscountTickets { get; set; }
 

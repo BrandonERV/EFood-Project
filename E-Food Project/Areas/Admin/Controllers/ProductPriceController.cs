@@ -120,8 +120,21 @@ namespace E_Food_Project.Areas.Admin.Controllers
             return Json(new { success = true, message = "Precio del producto borrado correctamente" });
         }
 
-       
 
+        [ActionName("ValidatePriceType")]
+        public async Task<IActionResult> ValidatePriceType(int priceTypeId = 0)
+        {
+            bool value = false;
+            var list = await _workUnit.ProductPrice.getAll();
+            
+            value = list.Any(p => p.PriceType.Id == priceTypeId);
+            
+            if (value)
+            {
+                return Json(new { data = true });
+            }
+            return Json(new { data = false });
+        }
 
 
         #endregion

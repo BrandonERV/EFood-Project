@@ -22,6 +22,34 @@ namespace EFood.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EFood.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ShoppingCarts");
+                });
+
             modelBuilder.Entity("EFood.models.Card", b =>
                 {
                     b.Property<int>("Id")
@@ -163,9 +191,18 @@ namespace EFood.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Amount")
                         .HasColumnType("int")
                         .HasColumnName("amount");
+
+                    b.Property<string>("ClientLastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClientName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("date")
@@ -174,6 +211,9 @@ namespace EFood.DataAccess.Migrations
                     b.Property<int>("PaymentProcessorId")
                         .HasColumnType("int")
                         .HasColumnName("paymentProcessorId");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StatusId")
                         .HasColumnType("int")
@@ -203,9 +243,15 @@ namespace EFood.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<int>("OrdersId")
                         .HasColumnType("int")
                         .HasColumnName("ordersId");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int")
@@ -678,6 +724,25 @@ namespace EFood.DataAccess.Migrations
                     b.HasDiscriminator().HasValue("User");
                 });
 
+            modelBuilder.Entity("EFood.Models.ShoppingCart", b =>
+                {
+                    b.HasOne("EFood.models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("EFood.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("EFood.models.Logbook", b =>
                 {
                     b.HasOne("EFood.models.User", "User")
@@ -706,7 +771,7 @@ namespace EFood.DataAccess.Migrations
                     b.HasOne("EFood.models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("PaymentProcessor");

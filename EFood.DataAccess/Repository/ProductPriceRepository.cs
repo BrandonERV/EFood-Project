@@ -2,6 +2,7 @@
 using EFood.DataAccess.Repository.IRepository;
 using EFood.models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -65,5 +66,29 @@ namespace EFood.DataAccess.Repository
                 return null;
             }
         }
+
+        public IEnumerable<SelectListItem> GetProductPricesListByIdDropDown(string obj, int productId)
+        {
+            if (obj == "ProductPrices")
+            {
+                var productPrices = _db.ProductPrices.Where(p => p.ProductId == productId).Select(i => new SelectListItem()
+                {
+                    Text = $"{i.PriceType.Name} - {i.Amount}",
+                    Value = i.Amount.ToString() 
+                }).ToList();
+
+                return productPrices;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
+
+    
+
+
 }
+

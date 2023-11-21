@@ -2,7 +2,9 @@
 let datatable;
 
 $(document).ready(function () {
-    loadDatatable();
+   
+   loadDatatable();
+    
 
 
 
@@ -26,7 +28,7 @@ function loadDatatable() {
             }
         },
         "ajax": {
-            "url": "/Admin/ProductPrice/getAll"
+            "url": "/Admin/ProductPrice/getAll?productId=1"
         },
         "columns": [
             { "data": "id" },

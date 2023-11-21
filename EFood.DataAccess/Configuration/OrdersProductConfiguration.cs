@@ -16,6 +16,10 @@ namespace EFood.DataAccess.Configuration
             builder.Property(e => e.Id).HasColumnName("id").IsRequired();
             builder.Property(e => e.OrdersId).HasColumnName("ordersId").IsRequired();
             builder.Property(e => e.ProductId).HasColumnName("productId").IsRequired();
+            builder.Property(e => e.Amount).IsRequired();
+            builder.Property(e => e.Price).IsRequired();
+
+
 
             builder.HasOne(d => d.Orders).WithMany()
                 .HasForeignKey(d => d.OrdersId)
