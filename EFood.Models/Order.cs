@@ -36,8 +36,6 @@ public partial class Order
 
     public string ClientName { get; set; }
 
-    public string ClientLastName { get; set; }
-
     public string Adress { get; set; }
 
     public string PhoneNumber { get; set; }

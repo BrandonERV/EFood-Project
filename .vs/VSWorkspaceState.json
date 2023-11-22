@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\E-Food Project",
+    "\\E-Food Project\\Areas",
+    "\\E-Food Project\\Areas\\Inventory",
+    "\\E-Food Project\\Areas\\Inventory\\Controllers"
   ],
-  "SelectedNode": "\\E-Food Project.sln",
+  "SelectedNode": "\\E-Food Project\\Areas\\Inventory\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

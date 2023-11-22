@@ -20,6 +20,8 @@ namespace EFood.DataAccess.Configuration
             builder.Property(e => e.UserId).IsRequired();
             builder.Property(e => e.ProductId).IsRequired();
             builder.Property(e => e.Amount).IsRequired();
+            builder.Property(e => e.Price).IsRequired();
+
 
             builder.HasOne(x => x.User).WithMany()
                 .HasForeignKey(x => x.UserId)

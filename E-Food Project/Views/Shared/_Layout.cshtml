@@ -63,7 +63,7 @@
                         @if (httpContextAccessor.HttpContext.Session.GetInt32(DS.ssShoppingCart) != null)
                         {
                             <li>
-                                <a asp-area="Inventario" asp-controller="Cart" asp-action="Index" class="nav-link">
+                                <a asp-area="Inventory" asp-controller="Cart" asp-action="Index" class="nav-link">
                                     @{
                                         var productAmount = httpContextAccessor.HttpContext.Session.GetInt32(DS.ssShoppingCart);
                                     }

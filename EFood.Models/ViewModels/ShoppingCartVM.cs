@@ -16,5 +16,9 @@ namespace EFood.Models.ViewModels
         public IEnumerable<SelectListItem> ProductPrices { get; set; }
 
         public ShoppingCart ShoppingCart { get; set; }
+
+        public IEnumerable<ShoppingCart> ShoppingCartList { get; set; }
+
+        public Order Order { get; set; }
     }
 }

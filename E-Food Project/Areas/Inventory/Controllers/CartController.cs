@@ -1,0 +1,111 @@
+﻿using EFood.DataAccess.Repository.IRepository;
+using EFood.Models.ViewModels;
+using EFood.models;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using EFood.Utilities;
+using EFood.Models;
+
+namespace E_Food_Project.Areas.Inventory.Controllers
+{
+    [Area("Inventory")]
+    public class CartController : Controller
+    {
+        private readonly IWorkUnit _workUnit;
+        private Order Order;
+
+        public ShoppingCartVM shoppingCartVM { get; set; }
+
+        public CartController(IWorkUnit workUnit) { 
+               _workUnit = workUnit;
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM();
+            shoppingCartVM.Order = new Order();
+            shoppingCartVM.ShoppingCartList = await _workUnit.ShoppingCart.getAll(
+                                                    u => u.UserId == claim.Value,
+                                                    incluirPropiedades:"Product");
+
+            shoppingCartVM.Order.Amount = 0;
+            shoppingCartVM.Order.UserId= claim.Value;
+
+            foreach (var list in shoppingCartVM.ShoppingCartList) {
+
+                shoppingCartVM.Order.Amount += (list.Price * list.Amount);
+            }
+
+            return View(shoppingCartVM);
+        }
+
+        public async Task<IActionResult> increment(int cartId)
+        {
+            var shoppingCart = await _workUnit.ShoppingCart.getFirst(c => c.Id == cartId);
+            shoppingCart.Amount += 1;
+            await _workUnit.Save();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> decrement(int cartId)
+        {
+            var shoppingCart = await _workUnit.ShoppingCart.getFirst(c => c.Id == cartId);
+            if(shoppingCart.Amount == 1) 
+            {
+                var shoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == shoppingCart.UserId);
+                var productAmount = shoppingCartList.Count();
+                _workUnit.ShoppingCart.Remove(shoppingCart);
+                HttpContext.Session.SetInt32(DS.ssShoppingCart, productAmount - 1);
+                await _workUnit.Save();
+            }
+            else
+            {
+                shoppingCart.Amount -= 1;
+                await _workUnit.Save();
+            }
+            
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> remove(int cartId)
+        {
+            var shoppingCart = await _workUnit.ShoppingCart.getFirst(c => c.Id == cartId);
+            var shoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == shoppingCart.UserId);
+            var productAmount = shoppingCartList.Count();
+            _workUnit.ShoppingCart.Remove(shoppingCart);
+            await _workUnit.Save();
+            HttpContext.Session.SetInt32(DS.ssShoppingCart, productAmount - 1);
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> Proceed() {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product")
+            };
+
+            shoppingCartVM.Order.Amount = 0;
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+            foreach (var list in shoppingCartVM.ShoppingCartList)
+            {
+                shoppingCartVM.Order.Amount += (list.Price * list.Amount);
+            }
+
+            shoppingCartVM.Order.ClientName = shoppingCartVM.Order.User.Name;
+            
+
+            return View(shoppingCartVM);
+
+
+        }
+    }
+}

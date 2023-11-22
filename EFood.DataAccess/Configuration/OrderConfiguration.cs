@@ -22,7 +22,6 @@ namespace EFood.DataAccess.Configuration
             builder.Property(e => e.PaymentProcessorId).HasColumnName("paymentProcessorId").IsRequired();
             builder.Property(e => e.StatusId).HasColumnName("statusId").IsRequired();
             builder.Property(e => e.ClientName).IsRequired(false);
-            builder.Property(e => e.ClientLastName).IsRequired(false);
             builder.Property(e => e.Adress).IsRequired(false);
             builder.Property(e => e.PhoneNumber).IsRequired(false);
 

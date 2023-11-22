@@ -29,7 +29,7 @@ namespace EFood.Models
         [Required]
         public int Amount { get; set; }
 
-        [NotMapped]
-        public double Price { get; set; }
+        [Required]
+        public int Price { get; set; }
     }
 }

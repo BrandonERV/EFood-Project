@@ -34,6 +34,9 @@ namespace EFood.DataAccess.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -197,9 +200,6 @@ namespace EFood.DataAccess.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int")
                         .HasColumnName("amount");
-
-                    b.Property<string>("ClientLastName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClientName")
                         .HasColumnType("nvarchar(max)");
