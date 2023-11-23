@@ -12111,19 +12111,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sjcha\\.nuget\\packages\\": {}
+    "C:\\Users\\maria\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
+      "projectUniqueName": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
       "projectName": "E-Food Project",
-      "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
-      "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\obj\\",
+      "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
+      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\E-Food Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12137,14 +12137,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj"
+            "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj"
             },
-            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
+            "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+              "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
             },
-            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+            "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+              "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
             }
           }
         }
@@ -12213,7 +12213,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

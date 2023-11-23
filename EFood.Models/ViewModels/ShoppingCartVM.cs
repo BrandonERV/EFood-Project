@@ -1,4 +1,5 @@
 ﻿using EFood.models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,9 @@ namespace EFood.Models.ViewModels
 
         public IEnumerable<ShoppingCart> ShoppingCartList { get; set; }
 
+        [BindProperty]
         public Order Order { get; set; }
 
-
-        public IEnumerable<string> ProcessorType { get; set; } = new List<string> { "Tarjeta de Crédito o Débito", "Efectivo", "Cheque Electrónico" };
 
         public IEnumerable<SelectListItem> CardList { get; set; }
     }

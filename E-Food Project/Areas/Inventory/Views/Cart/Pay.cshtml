@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Pay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -29,8 +28,10 @@
                                 <div class="row my-1">
                                     <div class="col-9">
                                         <label>Tipos pago</label>
-                                        <select asp-for="Order.PaymentType" asp-items="new SelectList(@Model.ProcessorType)" class="form-select">
-                                            <option disabled>-- Seleccione Tipo de pago --</option>
+                                        <select id="paymentTypeSelect" class="form-select">
+                                            <option value="Tarjeta de Crédito o Débito">Tarjeta de Crédito o Débito</option>
+                                            <option value="Efectivo">Efectivo</option>
+                                            <option value="Cheque Electrónico">Cheque Electrónico</option>
                                         </select>
                                         <span asp-validation-for="Order.PaymentType" class="text-danger"></span>
                                     </div>
@@ -43,7 +44,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
 
-                            <a asp-area="Inventory" asp-controller="Cart" asp-action="PayOption" class="btn btn-primary form-control">Continuar</a>
+                            <button type="button" id="continueButton" class="btn btn-primary form-control">Continuar</button>
                         </div>
                     </div>
                 </div>
@@ -61,3 +62,11 @@
     </div>
 </form>
 
+<script>
+    document.getElementById('continueButton').addEventListener('click', function() {
+        var selectedPaymentType = document.getElementById('paymentTypeSelect').value;
+
+        // Redireccionar al controlador con el tipo de pago seleccionado
+        window.location.href = '/Inventory/Cart/SetPaymentType?paymentType=' + selectedPaymentType;
+    });
+</script>
