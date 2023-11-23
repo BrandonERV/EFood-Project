@@ -101,7 +101,8 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                 shoppingCartVM.Order.Amount += (list.Price * list.Amount);
             }
 
-            shoppingCartVM.Order.ClientName = shoppingCartVM.Order.User.Name;
+            //shoppingCartVM.Order.ClientName = shoppingCartVM.Order.User.Name;
+          
 
             HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 
@@ -116,7 +117,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
             {
                 var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
 
-                shoppingCartVM.CardList = _workUnit.PaymentProcessorCard.GetCardList("Card");
+                shoppingCartVM.CardList = _workUnit.PaymentProcessorCard.GetCardNameList("Card");
 
                 HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 
@@ -141,10 +142,63 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
                 
             return RedirectToAction("PayOption");
-            
 
-            
         }
+        public async Task<IActionResult> SetInformation(string clientName, string phoneNumber, string adress)
+        {
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
+
+
+            shoppingCartVM.Order.ClientName = clientName;
+            shoppingCartVM.Order.PhoneNumber = phoneNumber;
+            shoppingCartVM.Order.Adress = adress;
+
+
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
+
+            return RedirectToAction("Pay");
+
+        }
+
+        public async Task<IActionResult> SetCardInformation(string cardType, string cardNumber)
+        {
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
+
+
+            shoppingCartVM.Order.CardType = cardType;
+            shoppingCartVM.Order.CardNumber = cardNumber;
+
+
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
+
+            return RedirectToAction("PayOptionFinal");
+
+        }
+
+        public async Task<IActionResult> SetCheckInformation(string payCheckNumber, string payCheckBacnkAccountNumber)
+        {
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
+
+
+            shoppingCartVM.Order.PayCheckNumber = payCheckNumber;
+            shoppingCartVM.Order.PayCheckBankAccountNumber = payCheckBacnkAccountNumber;
+
+
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
+
+            return RedirectToAction("PayOptionFinal");
+
+        }
+
 
         public async Task<IActionResult> PayOption()
         {
@@ -157,20 +211,33 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
                 if (shoppingCartVM.Order.PaymentType.Equals("Tarjeta de Crédito o Débito"))
                 {
+
                     shoppingCartVM.Order.IsPayCash = false;
                     shoppingCartVM.Order.IsPayCheck = false;
+                    shoppingCartVM.Order.IsCard = true;
+
+                    HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
                     return RedirectToAction("PayOptionCreditCard");
                 }
                 else if (shoppingCartVM.Order.PaymentType.Equals("Cheque Electrónico"))
                 {
                     shoppingCartVM.Order.IsPayCash = false;
                     shoppingCartVM.Order.IsCard = false;
+                    shoppingCartVM.Order.IsPayCheck = true;
+
+                    HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
                     return RedirectToAction("PayOptionPayCheck");
                 }
                 else
                 {
                     shoppingCartVM.Order.IsPayCheck = false;
                     shoppingCartVM.Order.IsCard = false;
+                    shoppingCartVM.Order.IsPayCash = true;
+
+                    HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
                     return RedirectToAction("PayOptionFinal");
                 }
             }
@@ -188,46 +255,48 @@ namespace E_Food_Project.Areas.Inventory.Controllers
         }
         public async Task<IActionResult> PayOptionPayCheck()
         {
-            var claimIdentity = (ClaimsIdentity)User.Identity;
-            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
-
-            shoppingCartVM = new ShoppingCartVM()
-            {
-                Order = new Order(),
-                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
-                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
-            };
-
-
-
-            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
-
-
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
 
             return View(shoppingCartVM);
 
 
         }
+
+       
         public async Task<IActionResult> PayOptionFinal()
         {
-            var claimIdentity = (ClaimsIdentity)User.Identity;
-            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
-
-            shoppingCartVM = new ShoppingCartVM()
-            {
-                Order = new Order(),
-                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
-                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
-            };
-
-
-            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
-
-
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
 
             return View(shoppingCartVM);
 
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PayOptionFinal(ShoppingCartVM shoppingCartVM)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                if (shoppingCartVM.Order.Id == 0)
+                {
+
+                    await _workUnit.Order.Add(shoppingCartVM.Order);
+                }
+                TempData[DS.Successful] = "Orden realizada correctamente";
+                await _workUnit.Save();
+                return RedirectToAction("Index");
+
+            }
+
+            return View(shoppingCartVM);
+
+
+        }
+
+
     }
 }

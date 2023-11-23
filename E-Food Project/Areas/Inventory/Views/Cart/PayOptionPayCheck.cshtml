@@ -4,5 +4,76 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>PayOptionPayCheck</h1>
+@model EFood.Models.ViewModels.ShoppingCartVM
+<form method="post">
+    <br />
+    <div class="backgroundWhiteBorder">
+        <div class="container">
+            <div class="card">
+                <div class="card-header bg-dark text-light ml-0 row">
+                    <div class="col-6">
+                        <i class="fa fa-shopping-cart"></i> &nbsp;
+                        Cueque Electrónico
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="container rounded p-2">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 pb-4">
+                                <div class="row">
+                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="text-success">Detalles de Pago</span>
+                                    </h4>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-9">
+                                        <label>Número de Cheque</label>
+                                        <input asp-for="Order.PayCheckNumber" id="payCheckNumberInput" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-9">
+                                        <label>Cuenta</label>
+                                        <input asp-for="Order.PayCheckBankAccountNumber" id="payCheckBacnkAccountNumberInput" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+
+                            <button type="button" id="continueButton" class="btn btn-primary form-control">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12  p-0">
+        <h3 class="text-success text-center"><i class="bi bi-cart-check-fill"></i></h3>
+    </div>
+    <div class="col-12 p-1">
+        <div class="text-center border-0">
+            <a asp-area="Inventory" asp-controller="Cart" asp-action="Index" class="btn btn-outline-success ">Regresar al Carro</a>
+        </div>
+
+    </div>
+</form>
+
+<script>
+    document.getElementById('continueButton').addEventListener('click', function () {
+        var payCheckNumberInput = document.getElementById('payCheckNumberInput').value;
+        var payCheckBacnkAccountNumberInput = document.getElementById('payCheckBacnkAccountNumberInput').value;
+
+
+        // Redireccionar al controlador con el tipo de pago seleccionado
+        window.location.href = '/Inventory/Cart/SetCheckInformation?payCheckNumber=' + payCheckNumberInput + '&payCheckBacnkAccountNumber=' + payCheckBacnkAccountNumberInput;
+    });
+</script>
+
+
 

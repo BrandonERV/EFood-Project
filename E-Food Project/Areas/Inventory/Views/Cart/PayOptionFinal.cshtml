@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "PayOptionFinal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model EFood.Models.ViewModels.ShoppingCartVM
+<br />
+<form method="post">
+<div class="backgroundWhiteBorder">
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-dark text-light ml-0 row">
+                <div class="col-6">
+                    <i class="fa fa-shopping-cart"></i> &nbsp;
+                    Detalles de Pago
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="container rounded p-2">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 pb-4">
+                            <div class="row">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-success">Confirmación del Pedido</span>
+                                </h4>
+                            </div>
+                            <div class="row my-1">
+                                <div class="col-9">
+                                    <label style="font-size: 20px; color: orange;">@Model.Order.ClientName</label>
+                                    <p>A continuación el detalle de la información del envío y forma de pago</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-success">Información de Envio</span>
+                                </h4>
+                            </div>
+                            <div class="row my-1">
+                                <div class="col-9">
+                                    <label>Dirección: @Model.Order.Adress</label>
+                                    <br />
+                                    <label>Teléfono: @Model.Order.PhoneNumber</label>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-success">Forma de Pago</span>
+                                </h4>
+                            </div>
+                            <div class="row my-1">
+                                <div class="col-9">
+                                    <label>Medio: @Model.Order.PaymentType</label>
+                                    <br />
+                                    @if(Model.Order.IsCard)
+                                    {
+                                        <label>Tipo: @Model.Order.CardType</label>
+                                        <br />
+                                        <label>Número: @Model.Order.CardNumber</label>
+                                    }
+                                    <br />
+                                    @if (Model.Order.IsPayCheck)
+                                    {
+                                        <label>Número Cheque: @Model.Order.PayCheckNumber</label>
+                                        <br />
+                                        <label>Cheque Cuenta: @Model.Order.PayCheckBankAccountNumber</label>
+                                    }
+                                    <br />
+                                    <label style="font-size: 20px; color: red;"> Total: @Model.Order.Amount</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                            <partial name="_ButtonsCreateBack" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12  p-0">
+    <h3 class="text-success text-center"><i class="bi bi-cart-check-fill"></i></h3>
+</div>
+<div class="col-12 p-1">
+    <div class="text-center border-0">
+        <a asp-area="Inventory" asp-controller="Home" asp-action="Index" class="btn btn-outline-primary ">Seguir Comprando</a>
+    </div>
+
+</div>
+</form>
+

@@ -34,10 +34,13 @@ public partial class Order
     [ForeignKey("UserId")]
     public User User { get; set; }
 
+    [Required]
     public string ClientName { get; set; }
 
+    [Required]
     public string Adress { get; set; }
 
+    [Required]
     public string PhoneNumber { get; set; }
 
     [Required]

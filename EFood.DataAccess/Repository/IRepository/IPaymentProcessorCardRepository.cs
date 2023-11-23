@@ -16,5 +16,7 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IEnumerable<SelectListItem> GetPaymentProcessorList(string obj);
 
+        IEnumerable<SelectListItem> GetCardNameList(string obj);
+
     }
 }

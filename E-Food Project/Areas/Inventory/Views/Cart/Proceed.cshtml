@@ -31,7 +31,7 @@
                                         <label>Nombres</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="Order.ClientName" type="text" class="form-control" />
+                                        <input asp-for="Order.ClientName" id="clientNameInput" type="text" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -39,7 +39,7 @@
                                         <label>Telefono</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="Order.PhoneNumber" type="text" class="form-control" />
+                                        <input asp-for="Order.PhoneNumber" id="phoneNumberInput" type="text" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -47,7 +47,7 @@
                                         <label>Direccion</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="Order.Adress" type="text" class="form-control" />
+                                        <input asp-for="Order.Adress" id="adressInput" type="text" class="form-control" />
                                     </div>
                                 </div>
                                 
@@ -81,7 +81,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
 
-                            <a asp-area="Inventory" asp-controller="Cart" asp-action="Pay" asp-route-order="" class="btn btn-primary form-control">Realizar pedido</a>
+                            <button type="button" id="continueButton" class="btn btn-primary form-control">Realizar Pedido</button>
                         </div>
                     </div>
                 </div>
@@ -99,6 +99,15 @@
     </div>
 </form>
 
+<script>
+    document.getElementById('continueButton').addEventListener('click', function () {
+        var clientNameInput = document.getElementById('clientNameInput').value;
+        var phoneNumberInput = document.getElementById('phoneNumberInput').value;
+        var adressInput = document.getElementById('adressInput').value;
 
+        // Redireccionar al controlador con el tipo de pago seleccionado
+        window.location.href = '/Inventory/Cart/SetInformation?clientName=' + clientNameInput + '&phoneNumber=' + phoneNumberInput + '&adress=' + adressInput;
+    });
+</script>
 
 

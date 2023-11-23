@@ -49,6 +49,22 @@ namespace EFood.DataAccess.Repository
             }
         }
 
+        public IEnumerable<SelectListItem> GetCardNameList(string obj)
+        {
+            if (obj == "Card")
+            {
+                return _db.Cards.Select(i => new SelectListItem()
+                {
+                    Text = i.Name,
+                    Value = i.Name
+                });
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<SelectListItem> GetPaymentProcessorList(string obj)
         {
             if (obj == "PaymentProcessor")

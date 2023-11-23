@@ -4,12 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@{
-    ViewData["Title"] = "Pay";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 @model EFood.Models.ViewModels.ShoppingCartVM
 <form method="post">
     <br />
@@ -35,20 +29,59 @@
                                 <div class="row my-1">
                                     <div class="col-9">
                                         <label>Tarjeta</label>
-                                        <select asp-for="Order.CardType" asp-items="@Model.CardList" class="form-select">
+                                        <select asp-for="Order.CardType" id="cardTypeInput" asp-items="@Model.CardList" class="form-select">
                                             <option disabled>-- Seleccione Tarjeta --</option>
                                         </select>
                                         <span asp-validation-for="Order.CardType" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Numero de Tarjeta</label>
-                                    </div>
                                     <div class="col-9">
-                                        <input asp-for="Order.CardNumber" type="text" class="form-control" />
+                                        <label>Numero de Tarjeta</label>
+                                        <input asp-for="Order.CardNumber" id="cardNumberInput" type="text" class="form-control" />
+                                        
                                     </div>
                                 </div>
+                                <div class="row my-1">
+                                    <div class="col-9">
+                                        <label>Fecha de Vencimiento</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Mes</label>
+                                        <select class="form-control">
+                                            <option value="">Selecciona el mes</option>
+                                            <option value="1">Enero</option>
+                                            <option value="2">Febrero</option>
+                                            <option value="3">Marzo</option>
+                                            <option value="4">Abril</option>
+                                            <option value="5">Mayo</option>
+                                            <option value="6">Junio</option>
+                                            <option value="7">Julio</option>
+                                            <option value="8">Agosto</option>
+                                            <option value="9">Septiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <label>Año</label>
+                                        <select class="form-control">
+                                            <option value="">Selecciona el año</option>
+                                            @for (var i = DateTime.Now.Year; i <= DateTime.Now.Year + 30; i++)
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-2">
+                                        <label>CVV</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -57,7 +90,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
 
-                            <a asp-area="Inventory" asp-controller="Cart" asp-action="PayOptionFinal" class="btn btn-primary form-control">Continuar</a>
+                            <button type="button" id="continueButton" class="btn btn-primary form-control">Continuar</button>
                         </div>
                     </div>
                 </div>
@@ -75,5 +108,15 @@
     </div>
 </form>
 
+<script>
+    document.getElementById('continueButton').addEventListener('click', function () {
+        var cardTypeInput = document.getElementById('cardTypeInput').value;
+        var cardNumberInput = document.getElementById('cardNumberInput').value;
+        
+
+        // Redireccionar al controlador con el tipo de pago seleccionado
+        window.location.href = '/Inventory/Cart/SetCardInformation?cardType=' + cardTypeInput + '&cardNumber=' + cardNumberInput;
+    });
+</script>
 
 
