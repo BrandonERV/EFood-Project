@@ -2,6 +2,7 @@
 using EFood.DataAccess.Repository.IRepository;
 using EFood.models;
 using EFood.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -23,5 +24,6 @@ namespace EFood.DataAccess.Repository
         {
            _db.Update(shoppingCart);
         }
+        
     }
 }

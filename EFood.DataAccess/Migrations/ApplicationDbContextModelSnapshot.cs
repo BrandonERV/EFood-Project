@@ -201,6 +201,13 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("amount");
 
+                    b.Property<string>("CardNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ClientName")
                         .HasColumnType("nvarchar(max)");
 
@@ -208,9 +215,28 @@ namespace EFood.DataAccess.Migrations
                         .HasColumnType("date")
                         .HasColumnName("date");
 
+                    b.Property<bool>("IsCard")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPayCash")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPayCheck")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PayCheckBankAccountNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PayCheckNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PaymentProcessorId")
                         .HasColumnType("int")
                         .HasColumnName("paymentProcessorId");
+
+                    b.Property<string>("PaymentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");

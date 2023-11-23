@@ -107,5 +107,123 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
 
         }
+        public async Task<IActionResult> Pay(int id)
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+            };
+
+            
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+
+
+            return View(shoppingCartVM);
+
+
+        }
+        public async Task<IActionResult> PayOption()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+            };
+
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+            if (shoppingCartVM.Order.PaymentType.Equals("Tarjeta de Crédito o Débito")) {
+                shoppingCartVM.Order.IsPayCash = false;
+                shoppingCartVM.Order.IsPayCheck = false;
+                return RedirectToAction("PayOptionCreditCard");
+            }
+            else if (shoppingCartVM.Order.PaymentType.Equals("Cheque Electrónico"))
+            {
+                shoppingCartVM.Order.IsPayCash = false;
+                shoppingCartVM.Order.IsCard = false;
+                return RedirectToAction("PayOptionPayCheck");
+            }
+            else
+            {
+                shoppingCartVM.Order.IsPayCheck = false;
+                shoppingCartVM.Order.IsCard = false;
+                return RedirectToAction("PayOptionFinal");
+            }
+        }
+
+        public async Task<IActionResult> PayOptionCreditCard()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+            };
+
+
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+
+
+            return View(shoppingCartVM);
+
+
+        }
+        public async Task<IActionResult> PayOptionPayCheck()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+            };
+
+
+
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+
+
+            return View(shoppingCartVM);
+
+
+        }
+        public async Task<IActionResult> PayOptionFinal()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            shoppingCartVM = new ShoppingCartVM()
+            {
+                Order = new Order(),
+                ShoppingCartList = await _workUnit.ShoppingCart.getAll(c => c.UserId == claim.Value, incluirPropiedades: "Product"),
+                CardList = _workUnit.PaymentProcessorCard.GetCardList("Card")
+            };
+
+
+            shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+
+
+
+            return View(shoppingCartVM);
+
+
+        }
     }
 }

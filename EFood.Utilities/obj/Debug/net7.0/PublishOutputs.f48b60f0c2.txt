@@ -1,0 +1,10 @@
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\EFood.Utilities.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\EFood.Utilities.deps.json
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\EFood.Utilities.pdb
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.Extensions.Identity.Core.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.Utilities\bin\Debug\net7.0\publish\Microsoft.Extensions.Options.dll

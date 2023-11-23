@@ -1,0 +1,12 @@
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\EFood.Models.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\EFood.Models.deps.json
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\EFood.Models.pdb
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.AspNetCore.Identity.UI.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.Extensions.Identity.Core.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.Extensions.Identity.Stores.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\Microsoft.Extensions.Options.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\EFood.Utilities.dll
+D:\Universidad\Semestre22023\DiseñoSoftware\Proyecto\Publicacion\EFood.Utilities.pdb

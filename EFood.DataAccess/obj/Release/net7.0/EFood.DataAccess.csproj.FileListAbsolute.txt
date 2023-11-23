@@ -1,0 +1,17 @@
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.DataAccess.deps.json
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.DataAccess.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.DataAccess.pdb
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.Models.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.Utilities.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.Models.pdb
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\bin\Release\net7.0\EFood.Utilities.pdb
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.csproj.AssemblyReference.cache
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.AssemblyInfoInputs.cache
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.AssemblyInfo.cs
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.csproj.CopyComplete
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\refint\EFood.DataAccess.dll
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\EFood.DataAccess.pdb
+C:\Users\sjcha\Source\Repos\e-food-proyect\EFood.DataAccess\obj\Release\net7.0\ref\EFood.DataAccess.dll

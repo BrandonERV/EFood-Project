@@ -1,5 +1,6 @@
 ﻿using EFood.models;
 using EFood.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace EFood.DataAccess.Repository.IRepository
     public interface IShoppingCartRepository : IRepository<ShoppingCart>
     {
         void Update(ShoppingCart shoppingCart);
+
     }
 }

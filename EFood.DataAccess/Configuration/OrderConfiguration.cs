@@ -24,6 +24,14 @@ namespace EFood.DataAccess.Configuration
             builder.Property(e => e.ClientName).IsRequired(false);
             builder.Property(e => e.Adress).IsRequired(false);
             builder.Property(e => e.PhoneNumber).IsRequired(false);
+            builder.Property(e => e.PaymentType).IsRequired();
+            builder.Property(e => e.CardType).IsRequired();
+            builder.Property(e => e.IsCard).IsRequired();
+            builder.Property(e => e.IsPayCheck).IsRequired();
+            builder.Property(e => e.IsPayCash).IsRequired();
+            builder.Property(e => e.CardNumber).IsRequired(false);
+            builder.Property(e => e.PayCheckNumber).IsRequired(false);
+            builder.Property(e => e.PayCheckBankAccountNumber).IsRequired(false);
 
             builder.HasOne(d => d.User).WithMany()
                 .HasForeignKey(d => d.UserId)

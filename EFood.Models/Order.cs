@@ -40,6 +40,28 @@ public partial class Order
 
     public string PhoneNumber { get; set; }
 
+    [Required]
+    public string PaymentType { get; set; }
+
+    [Required]
+    public string CardType { get; set; }
+
+    [Required]
+    public bool IsCard { get; set; }
+
+    [Required]
+    public bool IsPayCheck { get; set; }
+
+    [Required]
+    public bool IsPayCash { get; set; }
+
+    public string CardNumber { get; set; }
+
+    public string PayCheckNumber { get; set; }
+
+    public string PayCheckBankAccountNumber { get; set; }
+
+
 
 
 }
