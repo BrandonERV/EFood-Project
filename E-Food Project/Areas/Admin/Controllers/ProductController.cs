@@ -2,12 +2,14 @@
 using EFood.models;
 using EFood.Models.ViewModels;
 using EFood.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Food_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = DS.Role_Admin + "," + DS.Role_Maintenance)]
     public class ProductController : Controller
     {
 

@@ -37,28 +37,39 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                Items
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="PriceType" asp-action="Index">Tipos de precios</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Card" asp-action="Index">Tarjetas</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="PaymentProcessor" asp-action="Index">Procesadores de pago</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="FoodLine" asp-action="Index">Lineas de comida</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Productos</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="DiscountTicket" asp-action="Index">Tiquetes de Descuento</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                Usuario
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Usuarios</a></li>
-                            </ul>
-                        </li>
+                        @if (User.IsInRole(DS.Role_Admin) || User.IsInRole(DS.Role_Maintenance))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Items
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @if (User.IsInRole(DS.Role_Admin))
+                                    {
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="PaymentProcessor" asp-action="Index">Procesadores de pago</a></li>
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Card" asp-action="Index">Tarjetas</a></li>
+                                    }
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="PriceType" asp-action="Index">Tipos de precios</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="FoodLine" asp-action="Index">Lineas de comida</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Productos</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="DiscountTicket" asp-action="Index">Tiquetes de Descuento</a></li>
+                                </ul>
+                            </li>
+                        }
+                        
+                        @if (User.IsInRole(DS.Role_Admin) || User.IsInRole(DS.Role_Security))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Usuario
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Usuarios</a></li>
+                                </ul>
+                            </li>
+                        }
+                        
 
                         @if (httpContextAccessor.HttpContext.Session.GetInt32(DS.ssShoppingCart) != null)
                         {

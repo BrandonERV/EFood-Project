@@ -1,6 +1,8 @@
 ﻿using EFood.DataAccess.Data;
 using EFood.DataAccess.Repository.IRepository;
 using EFood.models;
+using EFood.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace E_Food_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = DS.Role_Admin + "," + DS.Role_Security)]
     public class UserController : Controller
     {
         private readonly IWorkUnit _workUnit;
@@ -18,8 +21,6 @@ namespace E_Food_Project.Areas.Admin.Controllers
             _workUnit = workUnit;
             _db = db;
         }
-
-
 
         public IActionResult Index()
         {
