@@ -89,5 +89,27 @@
             }
             return true;
         }
+
+        document.getElementById("name").addEventListener('change', function () {
+            validateName();
+
+        });
+
+        function validateName() {
+            var url = '@Url.Content("~/")' + "Admin/PriceType/ValidateName";
+            var id = '#id';
+            var name = '#name';
+
+            $.getJSON(url, { id: $(id).val(), name: $(name).val() }, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var name = document.getElementById("name");
+                        swal("Error", "Nombre ya Existe", "error");
+                        name.value = "";
+                    }
+                });
+            })
+
+        }
     </script>
 }

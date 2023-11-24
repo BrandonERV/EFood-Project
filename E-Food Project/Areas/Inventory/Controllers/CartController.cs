@@ -83,6 +83,8 @@ namespace E_Food_Project.Areas.Inventory.Controllers
             HttpContext.Session.SetInt32(DS.ssShoppingCart, productAmount - 1);
             return RedirectToAction("Index");
         }
+
+
         public async Task<IActionResult> Proceed() {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -101,7 +103,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                 shoppingCartVM.Order.Amount += (list.Price * list.Amount);
             }
 
-            //shoppingCartVM.Order.ClientName = shoppingCartVM.Order.User.Name;
+   
           
 
             HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));

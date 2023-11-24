@@ -28,7 +28,7 @@ function loadDatatable() {
             }
         },
         "ajax": {
-            "url": "/Admin/ProductPrice/getAll?productId=1"
+            "url": "/Admin/ProductPrice/getAll"
         },
         "columns": [
             { "data": "id" },

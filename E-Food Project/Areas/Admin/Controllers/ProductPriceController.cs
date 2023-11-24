@@ -35,6 +35,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
             ViewData["ProductName"] = productVM.Product.Name;
             ViewData["ProductId"] = productVM.Product.Id;
 
+            HttpContext.Session.SetInt32("ProductId", id.GetValueOrDefault());
+
             return View(productVM);
         }
 
@@ -103,8 +105,10 @@ namespace E_Food_Project.Areas.Admin.Controllers
 
         [HttpGet]
         public async Task<IActionResult> getAll()
-        { 
-            var all = await _workUnit.ProductPrice.getAll(incluirPropiedades:"PriceType,Product");
+        {
+            int? productId = HttpContext.Session.GetInt32("ProductId");
+            var all = await _workUnit.ProductPrice.getAll(incluirPropiedades:"PriceType,Product",
+                                                          filtro: p => p.ProductId == productId.Value);
             return Json(new { data = all });
         }
 

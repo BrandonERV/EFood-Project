@@ -38,9 +38,11 @@
             <div class="form-group col-md-6">
                 <label>Nombre</label>
                 <input type="text" asp-for="Name" class="form-control" placeholder="Nombre del Linea de Comida" id="name"/>
-                <span asp-validation-formaction="Name" class="text-danger"></span>
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
         </div>
+
+
 
         <br />
         <div>
@@ -70,7 +72,7 @@
         });
 
         function validateName() {
-            var url = '@Url.Content("~/")' + "Admin/FoodLine/NameValidate";
+            var url = '@Url.Content("~/")' + "Admin/FoodLine/ValidateName";
             var id = '#id';
             var name = '#name';
             
