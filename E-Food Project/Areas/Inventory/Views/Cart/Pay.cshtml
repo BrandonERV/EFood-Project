@@ -37,6 +37,38 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-12 col-lg-5 offset-lg-1">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-success">Productos:</span>
+                                </h4>
+                                <ul class="list-group mb-3">
+                                    @foreach (var item in Model.ShoppingCartList)
+                                    {
+                                        <li class="list-group-item d-flex justify-content-between">
+                                            <div>
+                                                <h6 class="my-0">@item.Product.Name</h6>
+                                                <small class="text-muted">Cantidad: @item.Amount</small>
+                                            </div>
+                                            <span class="text-muted">₡ @(item.Price * item.Amount)</span>
+                                        </li>
+                                    }
+
+                                    <li class="list-group-item d-flex justify-content-between bg-light">
+                                        <strong class="text-success">Sub-Total</strong>
+                                        <strong class="text-success">₡@ViewData["Sub-Total"]</strong>
+                                        
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between bg-light">
+                                        <strong class="text-success">Descuento</strong>
+                                        <strong class="text-success">₡@ViewData["Discount"]</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between bg-light">
+                                        <strong class="text-success">Total</strong>
+                                        <strong class="text-success">₡@(Model.Order.Amount)</strong>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

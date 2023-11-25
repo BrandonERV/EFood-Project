@@ -88,6 +88,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
         public async Task<IActionResult> Proceed() {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            string claimValueAsString = claim.Value.ToString();
 
             shoppingCartVM = new ShoppingCartVM()
             {
@@ -97,6 +98,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
             shoppingCartVM.Order.Amount = 0;
             shoppingCartVM.Order.User = await _workUnit.User.getFirst(u => u.Id == claim.Value);
+            shoppingCartVM.DescountTikets = _workUnit.UserDiscountTicket.GetUserTicketListByIdDropDown("UserTickets", claimValueAsString);
 
             foreach (var list in shoppingCartVM.ShoppingCartList)
             {
@@ -112,6 +114,37 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
 
         }
+
+        public async Task<IActionResult> SetInformation(string clientName, string phoneNumber, string adress, string discount)
+        {
+            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
+
+            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
+
+
+            shoppingCartVM.Order.ClientName = clientName;
+            shoppingCartVM.Order.PhoneNumber = phoneNumber;
+            shoppingCartVM.Order.Adress = adress;
+
+
+            if (discount.Equals("-- Seleccione Tiquete de Descuento --")) 
+            {
+                shoppingCartVM.Discount = "0";
+            }
+            else
+            {
+                shoppingCartVM.Discount = discount;
+            }
+
+
+
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
+
+
+            return RedirectToAction("Pay");
+
+        }
+
         public async Task<IActionResult> Pay()
         {
             var serializedCart = HttpContext.Session.GetString("ShoppingCart");
@@ -120,6 +153,19 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                 var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
 
                 shoppingCartVM.CardList = _workUnit.PaymentProcessorCard.GetCardNameList("Card");
+
+                if (int.TryParse(shoppingCartVM.Discount, out int discountValue) && discountValue == 0)
+                {
+                    ViewData["Sub-Total"] = shoppingCartVM.Order.Amount;
+                    ViewData["Discount"] = 0;
+                }
+                else
+                {
+                    int discount = (shoppingCartVM.Order.Amount * discountValue) / 100;
+                    ViewData["Sub-Total"] = shoppingCartVM.Order.Amount;
+                    ViewData["Discount"] = discount;
+                    shoppingCartVM.Order.Amount -= discount;
+                }
 
                 HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 
@@ -146,24 +192,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
             return RedirectToAction("PayOption");
 
         }
-        public async Task<IActionResult> SetInformation(string clientName, string phoneNumber, string adress)
-        {
-            var serializedCart = HttpContext.Session.GetString("ShoppingCart");
-
-            var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
-
-
-            shoppingCartVM.Order.ClientName = clientName;
-            shoppingCartVM.Order.PhoneNumber = phoneNumber;
-            shoppingCartVM.Order.Adress = adress;
-
-
-            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
-
-
-            return RedirectToAction("Pay");
-
-        }
+       
 
         public async Task<IActionResult> SetCardInformation(string cardType, string cardNumber)
         {

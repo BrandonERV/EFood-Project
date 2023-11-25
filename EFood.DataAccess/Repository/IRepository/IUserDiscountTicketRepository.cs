@@ -16,5 +16,9 @@ namespace EFood.DataAccess.Repository.IRepository
 
         IEnumerable<SelectListItem> GetUserList(string obj);
 
+        IEnumerable<SelectListItem> GetUserTicketListByIdDropDown(string obj,string userId);
+
+
+
     }
 }

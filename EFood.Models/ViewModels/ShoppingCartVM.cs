@@ -24,7 +24,10 @@ namespace EFood.Models.ViewModels
         [BindProperty]
         public Order Order { get; set; }
 
-
         public IEnumerable<SelectListItem> CardList { get; set; }
+
+        public IEnumerable<SelectListItem> DescountTikets { get; set; }
+
+        public string Discount { get; set; }
     }
 }

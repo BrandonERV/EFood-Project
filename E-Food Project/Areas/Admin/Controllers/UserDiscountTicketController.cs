@@ -30,6 +30,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
             ViewData["DiscountTicketName"] = discountTicket.Name;
             ViewData["DiscountTicketId"] = discountTicket.Id;
 
+            HttpContext.Session.SetInt32("DiscountTicketId", id.GetValueOrDefault());
+
             return View(discountTicket);
         }
 
@@ -93,7 +95,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> getAll()
         {
-            var all = await _workUnit.UserDiscountTicket.getAll(incluirPropiedades: "User,Ticket");
+            int? discountTicketId = HttpContext.Session.GetInt32("DiscountTicketId");
+            var all = await _workUnit.UserDiscountTicket.getAll(incluirPropiedades: "User,Ticket", filtro: d => d.TicketId == discountTicketId.Value);
             return Json(new { data = all });
         }
 

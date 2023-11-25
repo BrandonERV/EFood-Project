@@ -63,6 +63,24 @@ namespace EFood.DataAccess.Repository
                 return null;
             }
         }
+
+        public IEnumerable<SelectListItem> GetUserTicketListByIdDropDown(string obj, string userId)
+        {
+            if (obj == "UserTickets")
+            {
+                var productPrices = _db.UserDiscountTickets.Where(p => p.UserId == userId).Select(i => new SelectListItem()
+                {
+                    Text = i.Ticket.Name,
+                    Value = i.Ticket.Discount.ToString()
+                }).ToList();
+
+                return productPrices;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
 
