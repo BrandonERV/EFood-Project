@@ -30,6 +30,8 @@ namespace E_Food_Project.Areas.Admin.Controllers
             ViewData["PaymentProcessorName"] = paymentProcessor.Name;
             ViewData["PaymentProcessorId"] = paymentProcessor.Id;
 
+            HttpContext.Session.SetInt32("PaymentProcessorId", id.GetValueOrDefault());
+
             return View(paymentProcessor);
         }
 
@@ -92,8 +94,10 @@ namespace E_Food_Project.Areas.Admin.Controllers
 
         [HttpGet]
         public async Task<IActionResult> getAll()
-        { 
-            var all = await _workUnit.PaymentProcessorCard.getAll(incluirPropiedades:"Card,PaymentProcessor");
+        {
+            int? paymentProcessorId = HttpContext.Session.GetInt32("PaymentProcessorId");
+            var all = await _workUnit.PaymentProcessorCard.getAll(incluirPropiedades: "Card,PaymentProcessor",
+                                                                    filtro: p => p.PaymentProcessorId == paymentProcessorId.Value);
             return Json(new { data = all });
         }
 

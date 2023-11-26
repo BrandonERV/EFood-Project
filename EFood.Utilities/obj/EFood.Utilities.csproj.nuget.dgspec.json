@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {}
+    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "projectName": "EFood.Utilities",
-        "projectPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
