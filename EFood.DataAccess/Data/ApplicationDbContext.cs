@@ -36,7 +36,6 @@ namespace EFood.DataAccess.Data
 
         public  DbSet<ProductPrice> ProductPrices { get; set; }
 
-        public  DbSet<Status> Statuses { get; set; }
 
         public  DbSet<User> Users { get; set; }
 

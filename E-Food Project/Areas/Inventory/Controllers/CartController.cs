@@ -300,6 +300,7 @@ namespace E_Food_Project.Areas.Inventory.Controllers
             var serializedCart = HttpContext.Session.GetString("ShoppingCart");
             var shoppingCartVM = JsonConvert.DeserializeObject<ShoppingCartVM>(serializedCart);
 
+
             return View(shoppingCartVM);
 
 
@@ -307,23 +308,31 @@ namespace E_Food_Project.Areas.Inventory.Controllers
 
         [HttpPost]
         public async Task<IActionResult> PayOptionFinal(ShoppingCartVM shoppingCartVM)
-        {
-
-            if (ModelState.IsValid)
             {
 
-                if (shoppingCartVM.Order.Id == 0)
-                {
 
-                    await _workUnit.Order.Add(shoppingCartVM.Order);
-                }
+
+                var claimIdentity = (ClaimsIdentity)User.Identity;
+                var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+                shoppingCartVM.Order.UserId = claim.Value;
+                shoppingCartVM.Order.Date = DateTime.Now;
+
+                shoppingCartVM.ShoppingCartList = await _workUnit.ShoppingCart.getAll(
+                                                    u => u.UserId == claim.Value,
+                                                    incluirPropiedades: "Product");
+
+                await _workUnit.Order.Add(shoppingCartVM.Order);
+
+                _workUnit.ShoppingCart.RemoveRange(shoppingCartVM.ShoppingCartList);
                 TempData[DS.Successful] = "Orden realizada correctamente";
                 await _workUnit.Save();
-                return RedirectToAction("Index");
+                HttpContext.Session.SetInt32(DS.ssShoppingCart, 0);
+                return RedirectToAction("Index"); 
 
-            }
+            
 
-            return View(shoppingCartVM);
+
 
 
         }

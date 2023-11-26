@@ -19,8 +19,6 @@ namespace EFood.DataAccess.Configuration
             builder.Property(e => e.Date)
                 .HasColumnType("date")
                 .HasColumnName("date").IsRequired();
-            builder.Property(e => e.PaymentProcessorId).HasColumnName("paymentProcessorId").IsRequired();
-            builder.Property(e => e.StatusId).HasColumnName("statusId").IsRequired();
             builder.Property(e => e.ClientName).IsRequired();
             builder.Property(e => e.Adress).IsRequired();
             builder.Property(e => e.PhoneNumber).IsRequired();
@@ -37,14 +35,6 @@ namespace EFood.DataAccess.Configuration
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-
-            builder.HasOne(d => d.PaymentProcessor).WithMany()
-                .HasForeignKey(d => d.PaymentProcessorId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasOne(d => d.Status).WithMany()
-                .HasForeignKey(d => d.StatusId)
-                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

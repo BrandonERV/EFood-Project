@@ -16,17 +16,7 @@ public partial class Order
     [Required]
     public int Amount { get; set; }
 
-    [Required]
-    public int StatusId { get; set; }
 
-    [Required]
-    public int PaymentProcessorId { get; set; }
-
-    [ForeignKey("PaymentProcessorId")]
-    public PaymentProcessor PaymentProcessor { get; set; }
-
-    [ForeignKey("StatusId")]
-    public Status Status { get; set; }
 
     [Required]
     public string UserId { get; set; }
