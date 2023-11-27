@@ -45,6 +45,8 @@ namespace EFood.DataAccess.Data
         public DbSet<UserDiscountTicket> UserDiscountTickets { get; set; }
 
 
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

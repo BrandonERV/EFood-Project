@@ -12116,11 +12116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
+      "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
       "projectName": "E-Food Project",
-      "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
+      "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\E-Food Project.csproj",
       "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\E-Food Project\\obj\\",
+      "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\E-Food Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12137,14 +12137,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj"
+            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.DataAccess\\EFood.DataAccess.csproj"
             },
-            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
+            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj"
             },
-            "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-              "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+            "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+              "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
             }
           }
         }

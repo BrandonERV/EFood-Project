@@ -54,7 +54,4 @@ public partial class Order
 
     public string PayCheckBankAccountNumber { get; set; }
 
-
-
-
 }

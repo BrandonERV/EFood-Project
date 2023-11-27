@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\E-Food Project"
+    "\\EFood.DataAccess",
+    "\\EFood.DataAccess\\Repository",
+    "\\EFood.DataAccess\\Repository\\IRepository"
   ],
-  "SelectedNode": "\\E-Food Project\\appsettings.json",
+  "SelectedNode": "\\EFood.DataAccess\\Repository\\Repository.cs",
   "PreviewInSolutionExplorer": false
 }

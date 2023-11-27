@@ -18,10 +18,5 @@ namespace EFood.DataAccess.Repository
         {
             _db = db;
         }
-        public void Update(Order Order)
-        {
-           
-            _db.Update(Order);
-        }
     }
 }

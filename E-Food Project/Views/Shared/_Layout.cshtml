@@ -24,7 +24,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">E_Food_Project</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EFood</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,9 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
 
                         @if (User.IsInRole(DS.Role_Admin) || User.IsInRole(DS.Role_Maintenance))
                         {
@@ -54,6 +52,7 @@
                                     <li><a class="dropdown-item" asp-area="Admin" asp-controller="FoodLine" asp-action="Index">Lineas de comida</a></li>
                                     <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Productos</a></li>
                                     <li><a class="dropdown-item" asp-area="Admin" asp-controller="DiscountTicket" asp-action="Index">Tiquetes de Descuento</a></li>
+                                    
                                 </ul>
                             </li>
                         }
@@ -66,6 +65,17 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Usuarios</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(DS.Role_Admin) || User.IsInRole(DS.Role_Advisory))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Consultas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Order" asp-action="Index">Ordenes</a></li>
                                 </ul>
                             </li>
                         }

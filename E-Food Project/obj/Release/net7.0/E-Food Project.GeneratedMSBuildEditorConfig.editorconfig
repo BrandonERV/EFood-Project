@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRm9vZExpbmVcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sjcha/source/repos/e-food-proyect/E-Food Project/Areas/Admin/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sjcha/source/repos/e-food-proyect/E-Food Project/Areas/Admin/Views/PaymentProcessorCard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGF5bWVudFByb2Nlc3NvckNhcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -270,6 +274,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sjcha/source/repos/e-food-proyect/E-Food Project/Areas/Inventory/Views/Cart/PayOptionCreditCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW52ZW50b3J5XFZpZXdzXENhcnRcUGF5T3B0aW9uQ3JlZGl0Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sjcha/source/repos/e-food-proyect/E-Food Project/Areas/Inventory/Views/Cart/PayOptionFinal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW52ZW50b3J5XFZpZXdzXENhcnRcUGF5T3B0aW9uRmluYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sjcha/source/repos/e-food-proyect/E-Food Project/Areas/Inventory/Views/Cart/PayOptionPayCheck.cshtml]

@@ -64,7 +64,7 @@
                                         <div class="col-9">
                                             <input asp-for="Order.PaymentType" type="text" class="form-control" readonly />
                                         </div>
-                                        <br />
+                                        
                                         @if(Model.Order.IsCard)
                                         {
                                             <label>Tipo:</label>
@@ -75,6 +75,12 @@
                                             <label>Número: </label>
                                             <div class="col-9">
                                                 <input asp-for="Order.CardNumber" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.PayCheckNumber" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.PayCheckBankAccountNumber" type="text" class="form-control" readonly />
                                             </div>
                                         }
                                         <br />
@@ -89,12 +95,42 @@
                                             <div class="col-9">
                                                 <input asp-for="Order.PayCheckBankAccountNumber" type="text" class="form-control" readonly />
                                             </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.CardType" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.CardNumber" type="text" class="form-control" readonly />
+                                            </div>
+                                        }
+                                        else{
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.PayCheckNumber" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.PayCheckBankAccountNumber" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.CardType" type="text" class="form-control" readonly />
+                                            </div>
+                                            <div hidden class="col-9">
+                                                <input asp-for="Order.CardNumber" type="text" class="form-control" readonly />
+                                            </div>
                                         }
                                         <br />
                                         <label style="font-size: 20px; color: red;"> Total:</label>
                                         <div class="col-9">
                                             <input asp-for="Order.Amount" type="text" class="form-control" readonly />
                                         </div>
+                                        <div hidden class="col-9">
+                                            <input asp-for="Order.IsCard" type="text" class="form-control" readonly />
+                                        </div>
+                                        <div hidden class="col-9">
+                                            <input asp-for="Order.IsPayCheck" type="text" class="form-control" readonly />
+                                        </div>
+                                        <div hidden class="col-9">
+                                            <input asp-for="Order.IsPayCash" type="text" class="form-control" readonly />
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

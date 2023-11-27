@@ -246,6 +246,8 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                     shoppingCartVM.Order.IsPayCash = false;
                     shoppingCartVM.Order.IsPayCheck = false;
                     shoppingCartVM.Order.IsCard = true;
+                    shoppingCartVM.Order.PayCheckNumber = "No Aplica";
+                    shoppingCartVM.Order.PayCheckBankAccountNumber = "No Aplica";
 
                     HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 
@@ -256,6 +258,8 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                     shoppingCartVM.Order.IsPayCash = false;
                     shoppingCartVM.Order.IsCard = false;
                     shoppingCartVM.Order.IsPayCheck = true;
+                    shoppingCartVM.Order.CardType = "No Aplica";
+                    shoppingCartVM.Order.CardNumber = "No Aplica";
 
                     HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 
@@ -266,6 +270,10 @@ namespace E_Food_Project.Areas.Inventory.Controllers
                     shoppingCartVM.Order.IsPayCheck = false;
                     shoppingCartVM.Order.IsCard = false;
                     shoppingCartVM.Order.IsPayCash = true;
+                    shoppingCartVM.Order.CardType = "No Aplica";
+                    shoppingCartVM.Order.CardNumber = "No Aplica";
+                    shoppingCartVM.Order.PayCheckNumber = "No Aplica";
+                    shoppingCartVM.Order.PayCheckBankAccountNumber = "No Aplica";
 
                     HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCartVM));
 

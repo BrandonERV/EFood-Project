@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {}
+    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
+    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
         "projectName": "EFood.Models",
-        "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
+        "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\EFood.Models.csproj",
         "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Models\\obj\\",
+        "outputPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sjcha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
-                "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
+              "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+                "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj"
               }
             }
           }
@@ -69,12 +69,12 @@
         }
       }
     },
-    "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
+    "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "projectName": "EFood.Utilities",
-        "projectPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
+        "projectPath": "C:\\Users\\sjcha\\source\\repos\\e-food-proyect\\EFood.Utilities\\EFood.Utilities.csproj",
         "packagesPath": "C:\\Users\\sjcha\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\sjcha\\Source\\Repos\\e-food-proyect\\EFood.Utilities\\obj\\",
         "projectStyle": "PackageReference",
